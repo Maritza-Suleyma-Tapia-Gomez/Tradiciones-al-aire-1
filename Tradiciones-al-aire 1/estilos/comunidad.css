@@ -1,0 +1,496 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --rojo: #d52b3f;
+    --rojo-claro: #ef5b69;
+    --verde: #087f45;
+    --verde-claro: #19a866;
+    --amarillo: #f5c842;
+    --crema: #fff8e8;
+    --blanco: #ffffff;
+    --texto: #3b2520;
+    --sombra: 0 8px 25px rgba(80, 30, 20, 0.15);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    background:
+        linear-gradient(
+            135deg,
+            #fff8e8 0%,
+            #fff 38%,
+            #ffe5e8 68%,
+            #e2f5e9 100%
+        );
+    color: var(--texto);
+    padding-bottom: 90px;
+}
+
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.comunidad-header {
+    position: relative;
+    overflow: hidden;
+    padding: 18px 20px 28px;
+    background: linear-gradient(
+        135deg,
+        var(--rojo),
+        #e94b58,
+        var(--amarillo)
+    );
+    color: white;
+    box-shadow: var(--sombra);
+}
+
+.volver {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background: rgba(255,255,255,0.18);
+    padding: 9px 15px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.titulo > span {
+    font-size: 45px;
+}
+
+.titulo p {
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.titulo h1 {
+    font-size: 34px;
+    margin-top: 3px;
+}
+
+.decoracion {
+    position: absolute;
+    right: 15px;
+    bottom: 12px;
+    font-size: 30px;
+    transform: rotate(-5deg);
+}
+
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.contenedor {
+    width: min(850px, 94%);
+    margin: 22px auto;
+}
+
+
+/* =========================
+   BIENVENIDA
+========================= */
+
+.bienvenida {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    border-radius: 22px;
+    padding: 18px;
+    box-shadow: var(--sombra);
+    border-left: 7px solid var(--verde);
+    margin-bottom: 20px;
+}
+
+.bienvenida-icono {
+    width: 62px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff1bd;
+    border-radius: 50%;
+    font-size: 34px;
+    flex-shrink: 0;
+}
+
+.bienvenida h2 {
+    color: var(--rojo);
+    margin-bottom: 5px;
+}
+
+.bienvenida p {
+    line-height: 1.5;
+    color: #674d46;
+}
+
+
+/* =========================
+   CREAR PUBLICACIÓN
+========================= */
+
+.crear-publicacion {
+    background: white;
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: var(--sombra);
+    margin-bottom: 28px;
+}
+
+.encabezado-seccion {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 15px;
+}
+
+.encabezado-seccion span {
+    font-size: 27px;
+}
+
+.encabezado-seccion h2 {
+    color: var(--verde);
+}
+
+
+.selector-categoria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.categoria {
+    border: 2px solid #eadfd7;
+    background: #fff;
+    color: #614a42;
+    padding: 9px 13px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.categoria:hover {
+    transform: translateY(-2px);
+}
+
+.categoria.activo {
+    background: var(--verde);
+    border-color: var(--verde);
+    color: white;
+}
+
+#texto-publicacion {
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
+    border: 2px solid #eadfd7;
+    border-radius: 17px;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    color: var(--texto);
+}
+
+#texto-publicacion:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(8,127,69,0.1);
+}
+
+.publicar-abajo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+#contador {
+    color: #8c746d;
+    font-size: 13px;
+}
+
+#boton-publicar {
+    border: none;
+    background: linear-gradient(
+        135deg,
+        var(--rojo),
+        var(--rojo-claro)
+    );
+    color: white;
+    padding: 12px 20px;
+    border-radius: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(213,43,63,0.25);
+    transition: 0.2s;
+}
+
+#boton-publicar:hover {
+    transform: translateY(-2px);
+}
+
+#boton-publicar:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+
+/* =========================
+   PUBLICACIONES
+========================= */
+
+.zona-comunidad {
+    margin-bottom: 30px;
+}
+
+.titulo-publicaciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.titulo-publicaciones > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.titulo-publicaciones h2 {
+    color: var(--rojo);
+}
+
+.titulo-publicaciones span:first-child {
+    font-size: 27px;
+}
+
+.en-vivo {
+    font-size: 12px;
+    font-weight: bold;
+    background: #e5f7ec;
+    color: var(--verde);
+    padding: 7px 10px;
+    border-radius: 15px;
+}
+
+
+/* =========================
+   TARJETA
+========================= */
+
+.publicacion {
+    background: white;
+    border-radius: 22px;
+    padding: 18px;
+    margin-bottom: 16px;
+    box-shadow: var(--sombra);
+    border-top: 5px solid var(--amarillo);
+}
+
+.publicacion-cabeza {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    background: #fff1bd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+}
+
+.datos-usuario {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.datos-usuario strong {
+    color: var(--texto);
+}
+
+.datos-usuario span {
+    font-size: 12px;
+    color: #947c73;
+}
+
+.etiqueta {
+    background: #e8f6ed;
+    color: var(--verde);
+    border-radius: 15px;
+    padding: 6px 9px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.texto-publicacion {
+    margin: 17px 0;
+    line-height: 1.6;
+    font-size: 15px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.acciones-publicacion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-top: 1px solid #eee2da;
+    padding-top: 12px;
+}
+
+.acciones-publicacion button {
+    border: none;
+    background: #fff7ed;
+    color: #76584d;
+    padding: 8px 11px;
+    border-radius: 17px;
+    cursor: pointer;
+}
+
+.acciones-publicacion button:hover {
+    background: #ffe9c7;
+}
+
+
+/* =========================
+   MENSAJES
+========================= */
+
+.cargando,
+.mensaje-vacio {
+    background: white;
+    border-radius: 22px;
+    padding: 35px 20px;
+    text-align: center;
+    box-shadow: var(--sombra);
+}
+
+.cargando div,
+.mensaje-vacio div {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.mensaje-vacio h3 {
+    color: var(--verde);
+    margin-bottom: 6px;
+}
+
+.mensaje-vacio p,
+.cargando p {
+    color: #806b63;
+}
+
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+.navegacion {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 72px;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.12);
+}
+
+.navegacion a {
+    text-decoration: none;
+    color: #806b63;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    min-width: 60px;
+    font-weight: bold;
+}
+
+.navegacion a span {
+    font-size: 23px;
+}
+
+.navegacion a small {
+    font-size: 10px;
+}
+
+.navegacion a.activo {
+    color: var(--rojo);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .titulo h1 {
+        font-size: 28px;
+    }
+
+    .decoracion {
+        font-size: 22px;
+        opacity: 0.8;
+    }
+
+    .bienvenida {
+        align-items: flex-start;
+    }
+
+    .bienvenida-icono {
+        width: 52px;
+        height: 52px;
+        font-size: 27px;
+    }
+
+    .titulo-publicaciones {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .etiqueta {
+        align-self: flex-start;
+    }
+
+    .publicar-abajo {
+        align-items: flex-end;
+    }
+
+    #boton-publicar {
+        padding: 11px 15px;
+    }
+}

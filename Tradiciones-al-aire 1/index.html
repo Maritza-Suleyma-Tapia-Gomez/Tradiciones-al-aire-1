@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tradiciones al Aire 🇲🇽</title>
+
+    <link rel="stylesheet" href="estilos/index.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         PANTALLA DE INICIO / INICIO DE SESIÓN
+         ===================================================== -->
+
+    <section id="pantalla-inicio" class="pantalla-inicio">
+
+        <!-- Papel picado decorativo -->
+        <div class="papel-picado">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+       <!-- Decoraciones mexicanas -->
+
+<div class="decoracion-mexicana decoracion-mexicana-1">
+    <img src="imagenes/nopal.jpg" alt="Nopal mexicano">
+</div>
+
+<div class="decoracion-mexicana decoracion-mexicana-2">
+    <img src="imagenes/maiz.jpg" alt="Maíz mexicano">
+</div>
+
+<div class="decoracion-mexicana decoracion-mexicana-3">
+    <img src="imagenes/pinata.jpg" alt="Piñata mexicana">
+</div>
+
+<div class="decoracion-mexicana decoracion-mexicana-4">
+    <img src="imagenes/taco.jpg" alt="Taco mexicano">
+</div>
+
+
+        <!-- Contenido del inicio -->
+
+        <div class="inicio-contenido">
+
+            <div class="escudo-mexico">
+    <img src="imagenes/mexico.jpg" alt="Bandera de México">
+</div>
+
+            <span class="inicio-etiqueta">
+                JUEGA • COMPARTE • RECUERDA
+            </span>
+
+            <h1>
+                Tradiciones
+                <br>
+                <span>al Aire</span>
+            </h1>
+
+            <p class="inicio-subtitulo">
+                Las tradiciones también se juegan.
+            </p>
+
+
+            <!-- Inicio de sesión -->
+
+            <div class="login-box">
+
+                <label for="nombre-jugador">
+                    ¿Cómo te llamas?
+                </label>
+
+                <input
+                    type="text"
+                    id="nombre-jugador"
+                    placeholder="Escribe tu nombre"
+                    maxlength="25"
+                    autocomplete="name"
+                >
+
+                <button
+                    type="button"
+                    id="boton-iniciar"
+                    onclick="iniciarJuego()"
+                >
+                    Iniciar sesión
+                </button>
+
+            </div>
+
+            <p class="inicio-ayuda">
+                Tu nombre aparecerá dentro de tu aventura.
+            </p>
+
+        </div>
+
+
+        <!-- Decoración inferior -->
+
+        <div class="decoracion-inferior">
+            <img src="imagenes/maiz.jpg" alt="">
+            <img src="imagenes/pinata.jpg" alt="">
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PANTALLA PRINCIPAL
+         ===================================================== -->
+
+    <div id="aplicacion" class="app oculto">
+
+
+        <!-- =================================================
+             ENCABEZADO
+             ================================================= -->
+
+        <header class="hero">
+
+            <div class="hero-decoracion hero-nopal">
+                <img src="imagenes/nopal.jpg" alt="">
+            </div>
+
+            <div class="hero-decoracion hero-pinata">
+                <img src="imagenes/pinata.jpg" alt="">
+            </div>
+
+
+            <p class="mini-titulo">
+                JUEGA • COMPARTE • RECUERDA
+            </p>
+
+
+            <div class="saludo-jugador">
+
+                <span id="nombre-mostrado">
+                    ¡Hola!
+                </span>
+
+            </div>
+
+
+            <h1>
+                Tradiciones
+                <br>
+                <span>al Aire</span>
+            </h1>
+
+
+            <p class="subtitulo">
+                Apaga la pantalla,
+                <br>
+                enciende el juego.
+            </p>
+
+
+            <!-- Decoración de juegos -->
+            <div class="hero-juegos-decoracion">
+
+                <img src="imagenes/trompo.jpg" alt="Trompo">
+
+                <img src="imagenes/loteria.jpg" alt="Lotería">
+
+                <img src="imagenes/balero.jpg" alt="Balero">
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             BIENVENIDA
+             ================================================= -->
+
+        <section class="bienvenida">
+
+            <span class="etiqueta">
+                NUESTRA TRADICIÓN
+            </span>
+
+            <h2>
+                ¡Bienvenida a Tradiciones al Aire!
+            </h2>
+
+            <p>
+                Descubre juegos que han pasado de generación
+                en generación y conoce las historias que los
+                hacen especiales.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             JUEGOS
+             ================================================= -->
+
+        <section
+            id="juegos"
+            class="seccion-juegos"
+        >
+
+            <div class="titulo-seccion">
+
+                <div>
+
+                    <span>
+                        EXPLORA
+                    </span>
+
+                    <h2>
+                        ¿A qué quieres jugar?
+                    </h2>
+
+                </div>
+
+                <span class="flecha">
+                    →
+                </span>
+
+            </div>
+
+
+
+            <!-- TARJETAS DE JUEGOS -->
+
+            <div class="grid-juegos">
+
+
+                <!-- ===============================
+                     TROMPO
+                     =============================== -->
+
+                <a
+                    href="trompo.html"
+                    class="juego-card trompo-card"
+                >
+
+                    <div class="juego-imagen">
+
+                        <img
+                            src="imagenes/trompo.jpg"
+                            alt="Trompo mexicano"
+                        >
+
+                    </div>
+
+                    <div class="juego-info">
+
+                        <span>
+                            CLÁSICO
+                        </span>
+
+                        <h3>
+                            Trompo
+                        </h3>
+
+                        <p>
+                            Gira, juega y descubre.
+                        </p>
+
+                    </div>
+
+                    <div class="card-flecha">
+                        →
+                    </div>
+
+                </a>
+
+
+
+                <!-- ===============================
+                     LOTERÍA
+                     =============================== -->
+
+                <a
+                    href="loteria.html"
+                    class="juego-card loteria-card"
+                >
+
+                    <div class="juego-imagen">
+
+                        <img
+                            src="imagenes/loteria.jpg"
+                            alt="Lotería mexicana"
+                        >
+
+                    </div>
+
+                    <div class="juego-info">
+
+                        <span>
+                            TRADICIONAL
+                        </span>
+
+                        <h3>
+                            Lotería
+                        </h3>
+
+                        <p>
+                            ¡Corre que se acaba!
+                        </p>
+
+                    </div>
+
+                    <div class="card-flecha">
+                        →
+                    </div>
+
+                </a>
+
+
+
+                <!-- ===============================
+                     BALERO
+                     =============================== -->
+
+                <a
+                    href="balero.html"
+                    class="juego-card balero-card"
+                >
+
+                    <div class="juego-imagen">
+
+                        <img
+                            src="imagenes/balero.jpg"
+                            alt="Balero mexicano"
+                        >
+
+                    </div>
+
+                    <div class="juego-info">
+
+                        <span>
+                            DESTREZA
+                        </span>
+
+                        <h3>
+                            Balero
+                        </h3>
+
+                        <p>
+                            Concentración y precisión.
+                        </p>
+
+                    </div>
+
+                    <div class="card-flecha">
+                        →
+                    </div>
+
+                </a>
+
+
+
+                <!-- ===============================
+                     MATATENA
+                     =============================== -->
+
+                <a
+                    href="matatena.html"
+                    class="juego-card matatena-card"
+                >
+
+                    <div class="juego-imagen">
+
+                        <img
+                            src="imagenes/matatena.jpg"
+                            alt="Matatena"
+                        >
+
+                    </div>
+
+                    <div class="juego-info">
+
+                        <span>
+                            REFLEJOS
+                        </span>
+
+                        <h3>
+                            Matatena
+                        </h3>
+
+                        <p>
+                            ¡Atrapa las piezas!
+                        </p>
+
+                    </div>
+
+                    <div class="card-flecha">
+                        →
+                    </div>
+
+                </a>
+
+
+
+                <!-- ===============================
+                     AVIONCITO
+                     =============================== -->
+
+                <a
+                    href="avioncito.html"
+                    class="juego-card avioncito-card"
+                >
+
+                    <div class="juego-imagen">
+
+                        <img
+                            src="imagenes/avioncito.jpg"
+                            alt="Avioncito"
+                        >
+
+                    </div>
+
+                    <div class="juego-info">
+
+                        <span>
+                            MOVIMIENTO
+                        </span>
+
+                        <h3>
+                            Avioncito
+                        </h3>
+
+                        <p>
+                            Salta, avanza y diviértete.
+                        </p>
+
+                    </div>
+
+                    <div class="card-flecha">
+                        →
+                    </div>
+
+                </a>
+
+
+
+                <!-- ===============================
+                     SALTAR LA CUERDA
+                     =============================== -->
+
+                <a
+                    href="cuerda.html"
+                    class="juego-card cuerda-card"
+                >
+
+                    <div class="juego-imagen">
+
+                        <img
+                            src="imagenes/cuerda.jpg"
+                            alt="Saltar la cuerda"
+                        >
+
+                    </div>
+
+                    <div class="juego-info">
+
+                        <span>
+                            DIVERSIÓN
+                        </span>
+
+                        <h3>
+                            Saltar la cuerda
+                        </h3>
+
+                        <p>
+                            ¡Salta al ritmo del juego!
+                        </p>
+
+                    </div>
+
+                    <div class="card-flecha">
+                        →
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DESCUBRE
+             ================================================= -->
+
+        <section class="descubre">
+
+            <div class="descubre-decoracion">
+
+                <img
+                    src="imagenes/maiz.jpg"
+                    alt="Maíz"
+                >
+
+            </div>
+
+            <div>
+
+                <span>
+                    ¿SABÍAS QUE?
+                </span>
+
+                <p>
+                    Estos juegos ayudan a desarrollar
+                    coordinación, memoria, paciencia
+                    y convivencia.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MENSAJE FINAL
+             ================================================= -->
+
+        <section class="mensaje-final">
+
+            <div class="mensaje-mexicano">
+
+                <img
+                    src="imagenes/pinata.jpg"
+                    alt="Piñata mexicana"
+                >
+
+            </div>
+
+            <h2>
+                Menos pantalla.
+                <br>
+                Más diversión.
+            </h2>
+
+            <p>
+                Las tradiciones también se juegan.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             NAVEGACIÓN
+             ================================================= -->
+<!-- =================================================
+     NAVEGACIÓN
+     ================================================= -->
+
+<nav class="menu-inferior">
+
+    <a href="index.html" class="menu-item activo">
+        <span>🏠</span>
+        <small>Inicio</small>
+    </a>
+
+    <a href="index.html#juegos" class="menu-item">
+        <span>🎮</span>
+        <small>Juegos</small>
+    </a>
+
+    <a href="comunidad.html" class="menu-item">
+        <span>👥</span>
+        <small>Comunidad</small>
+    </a>
+
+    <a href="retos.html" class="menu-item">
+        <span>🏆</span>
+        <small>Retos</small>
+    </a>
+
+    <a href="perfil.html" class="menu-item">
+        <span>👤</span>
+        <small>Perfil</small>
+    </a>
+
+</nav>
+
+
+
+    <!-- =====================================================
+         CONFETI
+         ===================================================== -->
+
+    <div
+        id="contenedor-confeti"
+        class="contenedor-confeti"
+    ></div>
+
+
+
+    <!-- =====================================================
+         MARIAChi DE BIENVENIDA
+         ===================================================== -->
+
+    <div
+        id="mariachi-bienvenida"
+        class="mariachi-bienvenida"
+    >
+
+        <div class="mariachi-imagen">
+
+            <img
+                src="imagenes/mariachi.jpg"
+                alt="Mariachi mexicano"
+            >
+
+        </div>
+
+        <div class="mariachi-texto">
+
+            <strong>
+                ¡Bienvenida, Zule!
+            </strong>
+
+            <span>
+                ¡Bienvenida a Tradiciones al Aire!
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         AUDIO
+         ===================================================== -->
+
+    <audio
+        id="musica-mexicana"
+        preload="auto"
+        loop
+    >
+
+        <source
+            src="sonidos/musica-mexicana.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="Java Script/index.js"></script>
+
+</body>
+
+</html>

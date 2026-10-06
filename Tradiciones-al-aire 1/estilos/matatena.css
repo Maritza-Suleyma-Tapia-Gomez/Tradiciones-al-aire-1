@@ -1,0 +1,952 @@
+/* =====================================
+   MATATENA | TRADICIONES AL AIRE
+===================================== */
+
+:root {
+    --verde: #087443;
+    --verde-claro: #19a765;
+    --rojo: #d92832;
+    --rojo-claro: #ef5960;
+    --amarillo: #ffd34d;
+    --azul: #2784c6;
+
+    --crema: #fffaf0;
+    --blanco: #ffffff;
+
+    --texto: #26352f;
+    --gris: #6f7c76;
+
+    --sombra:
+        0 18px 45px rgba(30, 70, 50, .12);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #fff0bf 0,
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #fffaf0,
+            #f4fff8
+        );
+
+    color: var(--texto);
+
+    min-height: 100vh;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app {
+    width: min(100%, 1100px);
+
+    margin: auto;
+
+    min-height: 100vh;
+
+    padding-bottom: 30px;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+/* =====================================
+   DECORACIÓN
+===================================== */
+
+.decoracion {
+    position: absolute;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    opacity: .3;
+}
+
+.decoracion-1 {
+    top: 120px;
+    left: 4%;
+
+    color: var(--rojo);
+
+    font-size: 35px;
+}
+
+.decoracion-2 {
+    top: 280px;
+    right: 5%;
+
+    color: var(--verde);
+
+    font-size: 42px;
+}
+
+.decoracion-3 {
+    top: 550px;
+    left: 3%;
+
+    color: var(--amarillo);
+
+    font-size: 45px;
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+.matatena-header {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 25px 25px 50px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(8,116,67,.12),
+            rgba(217,40,50,.08)
+        );
+
+    border-bottom-left-radius: 45px;
+
+    border-bottom-right-radius: 45px;
+}
+
+.volver {
+    position: absolute;
+
+    top: 25px;
+    left: 25px;
+
+    color: var(--verde);
+
+    text-decoration: none;
+
+    font-weight: 800;
+
+    background: white;
+
+    padding: 10px 15px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.07);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.volver:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,.11);
+}
+
+.boton-sonido {
+    position: absolute;
+
+    top: 25px;
+    right: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: white;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.08);
+
+    transition:
+        transform .2s ease;
+}
+
+.boton-sonido:hover {
+    transform: scale(1.08);
+}
+
+.etiqueta-juego {
+    display: inline-block;
+
+    margin-top: 45px;
+
+    padding: 9px 17px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd34d,
+            #ffe98b
+        );
+
+    color: #594600;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 7px 18px rgba(197,155,0,.18);
+}
+
+
+/* =====================================
+   TÍTULO LLAMATIVO
+===================================== */
+
+.matatena-header h1 {
+    position: relative;
+
+    display: inline-block;
+
+    margin-top: 18px;
+
+    font-size:
+        clamp(45px, 9vw, 82px);
+
+    line-height: .95;
+
+    font-weight: 1000;
+
+    letter-spacing: -4px;
+
+    color: transparent;
+
+    background:
+        linear-gradient(
+            135deg,
+            #087443 0%,
+            #19a765 28%,
+            #ffd34d 52%,
+            #ef5960 75%,
+            #d92832 100%
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    text-shadow:
+        3px 4px 0 rgba(255,211,77,.30),
+        0 10px 25px rgba(8,116,67,.15);
+
+    animation:
+        tituloMatatena 3s ease-in-out infinite;
+}
+
+.matatena-header h1::before {
+    content: "✦";
+
+    position: absolute;
+
+    left: -35px;
+    top: 5px;
+
+    color: var(--rojo);
+
+    font-size: 25px;
+
+    text-shadow: none;
+
+    animation:
+        estrellaTitulo 1.6s ease-in-out infinite;
+}
+
+.matatena-header h1::after {
+    content: "✣  ✨  ✣";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -25px;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+
+    color: var(--rojo);
+
+    font-size: 15px;
+
+    letter-spacing: 7px;
+
+    text-shadow: none;
+
+    animation:
+        brillitosMatatena 1.8s ease-in-out infinite;
+}
+
+.frase {
+    margin-top: 32px;
+
+    color: var(--gris);
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    font-weight: 600;
+}
+
+@keyframes tituloMatatena {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-1deg);
+    }
+
+    50% {
+        transform:
+            translateY(-5px)
+            rotate(1deg);
+    }
+}
+
+@keyframes estrellaTitulo {
+
+    0%, 100% {
+        opacity: .4;
+
+        transform:
+            scale(.8)
+            rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scale(1.25)
+            rotate(25deg);
+    }
+}
+
+@keyframes brillitosMatatena {
+
+    0%, 100% {
+        opacity: .45;
+
+        transform:
+            translateX(-50%)
+            scale(.9);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1.12);
+    }
+}
+
+
+/* =====================================
+   HERO
+===================================== */
+
+.matatena-hero {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 35px 20px 25px;
+
+    text-align: center;
+}
+
+.brillo {
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    left: 50%;
+    top: 10px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,211,77,.35),
+            transparent 68%
+        );
+
+    pointer-events: none;
+}
+
+.escena-juego {
+    position: relative;
+
+    width: min(100%, 470px);
+
+    height: 370px;
+
+    margin: auto;
+
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fffef8,
+            #eaf8ef
+        );
+
+    border: 3px solid rgba(8,116,67,.08);
+
+    box-shadow:
+        inset 0 -20px 30px rgba(8,116,67,.05);
+}
+
+.sombra-juego {
+    position: absolute;
+
+    width: 240px;
+    height: 35px;
+
+    bottom: 35px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        rgba(0,0,0,.12);
+
+    border-radius: 50%;
+
+    filter: blur(8px);
+}
+
+
+/* =====================================
+   PELOTA
+===================================== */
+
+.pelota {
+    position: absolute;
+
+    width: 55px;
+    height: 55px;
+
+    left: 50%;
+    top: 105px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #fff39b,
+            var(--amarillo) 50%,
+            #d7a900
+        );
+
+    border: 5px solid #c59b00;
+
+    box-shadow:
+        0 8px 12px rgba(0,0,0,.18);
+
+    z-index: 5;
+
+    transition:
+        filter .2s ease;
+}
+
+.pelota.lanzando {
+    animation:
+        lanzarPelota 4s ease-in-out;
+}
+
+.pelota.momento-atrapar {
+    filter:
+        drop-shadow(
+            0 0 14px
+            rgba(255,211,77,.9)
+        );
+}
+
+
+/* =====================================
+   PIEZAS
+===================================== */
+
+.piezas {
+    position: absolute;
+
+    left: 50%;
+    bottom: 60px;
+
+    width: 280px;
+    height: 100px;
+
+    transform:
+        translateX(-50%);
+}
+
+.pieza {
+    position: absolute;
+
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 9px;
+
+    color: white;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--rojo),
+            var(--rojo-claro)
+        );
+
+    box-shadow:
+        0 7px 12px rgba(0,0,0,.16);
+
+    transition:
+        transform .3s ease,
+        opacity .3s ease;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    touch-action: manipulation;
+}
+
+.pieza-1 {
+    left: 5px;
+    bottom: 5px;
+}
+
+.pieza-2 {
+    left: 60px;
+    bottom: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--verde),
+            var(--verde-claro)
+        );
+}
+
+.pieza-3 {
+    left: 120px;
+    bottom: 5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--azul),
+            #59a8df
+        );
+}
+
+.pieza-4 {
+    left: 180px;
+    bottom: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--amarillo),
+            #e4b700
+        );
+
+    color: #604d00;
+}
+
+.pieza-5 {
+    left: 235px;
+    bottom: 5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--rojo),
+            var(--verde)
+        );
+}
+
+.pieza:hover {
+    transform:
+        translateY(-5px)
+        scale(1.08);
+}
+
+.pieza.atrapada {
+    opacity: .25;
+
+    transform:
+        translateY(25px)
+        scale(.75)
+        rotate(20deg);
+}
+
+.pieza::before {
+    display: none !important;
+    content: none !important;
+}
+
+.pieza svg {
+    pointer-events: none !important;
+}
+
+.pieza.atrapada {
+    pointer-events: none;
+}
+
+
+/* =====================================
+   MENSAJE
+===================================== */
+
+.mensaje-juego {
+    min-height: 28px;
+
+    margin: 18px 0;
+
+    color: var(--gris);
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================
+   BOTÓN
+===================================== */
+
+.boton-jugar {
+    border: 0;
+
+    padding: 16px 28px;
+
+    border-radius: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--verde),
+            var(--verde-claro)
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 12px 25px rgba(8,116,67,.25);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.boton-jugar:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 16px 30px rgba(8,116,67,.30);
+}
+
+.boton-jugar:disabled {
+    opacity: .65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =====================================
+   MARCADOR
+===================================== */
+
+.marcador {
+    position: relative;
+
+    z-index: 2;
+
+    width: calc(100% - 40px);
+
+    margin: 20px auto 35px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow: var(--sombra);
+
+    overflow: hidden;
+}
+
+.marcador-item {
+    text-align: center;
+
+    padding: 22px 10px;
+
+    border-right:
+        1px solid #edf0ed;
+}
+
+.marcador-item:last-child {
+    border-right: 0;
+}
+
+.marcador-icono {
+    display: block;
+
+    font-size: 25px;
+
+    margin-bottom: 5px;
+}
+
+.marcador-item small {
+    display: block;
+
+    color: var(--gris);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.marcador-item strong {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--verde);
+
+    font-size: 27px;
+}
+
+.marcador-item.principal strong {
+    color: var(--rojo);
+}
+
+
+/* =====================================
+   ANIMACIÓN DE LA PELOTA
+===================================== */
+
+@keyframes lanzarPelota {
+
+    0% {
+        transform:
+            translate(-50%, 0)
+            scale(1);
+    }
+
+    18% {
+        transform:
+            translate(-50%, -75px)
+            scale(1.04);
+    }
+
+    35% {
+        transform:
+            translate(-50%, -145px)
+            scale(.98);
+    }
+
+    55% {
+        transform:
+            translate(-50%, -155px)
+            scale(.98);
+    }
+
+    72% {
+        transform:
+            translate(-50%, -145px)
+            scale(1);
+    }
+
+    88% {
+        transform:
+            translate(-50%, -65px)
+            scale(1.04);
+    }
+
+    100% {
+        transform:
+            translate(-50%, 0)
+            scale(1);
+    }
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 520px) {
+
+    .matatena-header {
+        padding-left: 15px;
+        padding-right: 15px;
+
+        padding-bottom: 55px;
+    }
+
+    .volver {
+        left: 15px;
+    }
+
+    .boton-sonido {
+        right: 15px;
+    }
+
+    .matatena-header h1 {
+        font-size:
+            clamp(42px, 12vw, 65px);
+
+        letter-spacing: -3px;
+    }
+
+    .matatena-header h1::before {
+        left: -22px;
+
+        font-size: 18px;
+    }
+
+    .matatena-header h1::after {
+        bottom: -22px;
+
+        font-size: 12px;
+
+        letter-spacing: 5px;
+    }
+
+    .escena-juego {
+        height: 330px;
+    }
+
+    .piezas {
+        transform:
+            translateX(-50%)
+            scale(.85);
+    }
+
+    .pelota {
+        top: 95px;
+    }
+
+    .marcador {
+        width: calc(100% - 25px);
+    }
+
+    .marcador-item {
+        padding: 18px 5px;
+    }
+
+    .marcador-item strong {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .matatena-header h1 {
+        font-size: 40px;
+    }
+
+    .matatena-header h1::before {
+        display: none;
+    }
+
+    .piezas {
+        transform:
+            translateX(-50%)
+            scale(.72);
+    }
+
+    .menu-item small {
+        font-size: 9px;
+    }
+}
+
+
+/* =====================================
+   REDUCIR ANIMACIONES
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+
+        transition-duration: .01ms !important;
+    }
+}

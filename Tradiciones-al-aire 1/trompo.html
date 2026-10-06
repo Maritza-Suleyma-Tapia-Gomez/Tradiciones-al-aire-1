@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Trompo | Tradiciones al Aire</title>
+
+    <link
+        rel="stylesheet"
+        href="estilos/trompo.css"
+    >
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- FONDO DECORATIVO -->
+
+        <div class="decoracion decoracion-1">✦</div>
+        <div class="decoracion decoracion-2">✧</div>
+        <div class="decoracion decoracion-3">🌀</div>
+
+
+        <!-- ENCABEZADO -->
+
+        <header class="trompo-header">
+<!-- ENCABEZADO -->
+
+        <header class="trompo-header">
+
+            <a
+                href="index.html?sesion=activa"
+                class="volver"
+            >
+                ← Inicio
+            </a>
+
+            <button
+                class="boton-sonido"
+                id="botonSonido"
+                aria-label="Activar o desactivar sonido"
+            >
+                🔊
+            </button>
+
+            <div class="etiqueta-juego">
+                🌀 JUEGO TRADICIONAL
+            </div>
+
+            <h1>
+                El Trompo
+            </h1>
+
+            <p class="frase">
+                Hazlo girar,<br>
+                ¡y que comience la diversión!
+            </p>
+
+        </header>
+
+
+        <!-- TROMPO PROTAGONISTA -->
+
+        <section class="trompo-hero">
+
+            <div class="brillo"></div>
+
+            <div class="trompo-escena">
+
+                <div class="linea-trompo"></div>
+
+
+                <!-- TROMPO -->
+
+                <div
+                    class="trompo"
+                    id="trompo"
+                    aria-label="Trompo mexicano"
+                >
+
+                    <svg
+                        class="trompo-svg"
+                        viewBox="0 0 200 290"
+                        width="200"
+                        height="290"
+                        aria-hidden="true"
+                    >
+
+                        <defs>
+
+                            <clipPath id="cono">
+
+                                <path
+                                    d="M22 95Q100 45 178 95L108 268H92Z"
+                                />
+
+                            </clipPath>
+
+                        </defs>
+
+
+                        <!-- Palo -->
+
+                        <rect
+                            x="95"
+                            y="6"
+                            width="10"
+                            height="42"
+                            rx="5"
+                            fill="#8a5a2b"
+                        />
+
+
+                        <!-- Parte superior -->
+
+                        <ellipse
+                            cx="100"
+                            cy="62"
+                            rx="26"
+                            ry="16"
+                            fill="#ffd34d"
+                            stroke="#c59b00"
+                            stroke-width="4"
+                        />
+
+
+                        <!-- Cuerpo -->
+
+                        <path
+                            d="M22 95Q100 45 178 95L108 268H92Z"
+                            fill="#d92832"
+                        />
+
+
+                        <!-- Franjas -->
+
+                        <g clip-path="url(#cono)">
+
+                            <rect
+                                x="0"
+                                y="108"
+                                width="200"
+                                height="26"
+                                fill="#ffd34d"
+                            />
+
+                            <rect
+                                x="0"
+                                y="144"
+                                width="200"
+                                height="26"
+                                fill="#087443"
+                            />
+
+                            <rect
+                                x="0"
+                                y="180"
+                                width="200"
+                                height="22"
+                                fill="#fff"
+                            />
+
+                            <rect
+                                x="0"
+                                y="212"
+                                width="200"
+                                height="18"
+                                fill="#ffd34d"
+                            />
+
+                        </g>
+
+
+                        <!-- Borde -->
+
+                        <path
+                            d="M22 95Q100 45 178 95L108 268H92Z"
+                            fill="none"
+                            stroke="#7a1a20"
+                            stroke-width="5"
+                            stroke-linejoin="round"
+                        />
+
+
+                        <!-- Punta -->
+
+                        <path
+                            d="M92 266L100 286L108 266Z"
+                            fill="#444"
+                        />
+
+                    </svg>
+
+                </div>
+
+
+                <div class="sombra-trompo"></div>
+
+            </div>
+
+
+            <!-- MENSAJE -->
+
+            <p
+                class="mensaje-giro"
+                id="mensajeGiro"
+            >
+                Toca el botón para lanzar
+            </p>
+
+
+            <!-- BOTÓN -->
+
+            <button
+                class="boton-lanzar"
+                id="botonLanzar"
+            >
+                <span>🌀</span>
+                ¡Lanzar trompo!
+            </button>
+
+        </section>
+
+
+        <!-- MARCADOR -->
+
+        <section class="marcador">
+
+            <div class="marcador-item">
+
+                <span class="marcador-icono">
+                    ⏱️
+                </span>
+
+                <small>
+                    TIEMPO
+                </small>
+
+                <strong id="tiempo">
+                    0.0 s
+                </strong>
+
+            </div>
+
+
+            <div class="marcador-item principal">
+
+                <span class="marcador-icono">
+                    🏆
+                </span>
+
+                <small>
+                    RÉCORD
+                </small>
+
+                <strong id="record">
+                    0.0 s
+                </strong>
+
+            </div>
+
+
+            <div class="marcador-item">
+
+                <span class="marcador-icono">
+                    🔥
+                </span>
+
+                <small>
+                    RACHA
+                </small>
+
+                <strong id="racha">
+                    0
+                </strong>
+
+            </div>
+
+        </section>
+
+
+<!-- NAVEGACIÓN -->
+
+        <nav class="menu-inferior">
+
+            <a
+                href="index.html?sesion=activa"
+                class="menu-item"
+            >
+                <span>🏠</span>
+                <small>Inicio</small>
+            </a>
+
+
+            <a
+                href="index.html#juegos"
+                class="menu-item activo"
+            >
+                <span>🎮</span>
+                <small>Juegos</small>
+            </a>
+
+
+            <a
+                href="comunidad.html"
+                class="menu-item"
+            >
+                <span>👥</span>
+                <small>Comunidad</small>
+            </a>
+
+
+            <a
+                href="perfil.html"
+                class="menu-item"
+            >
+                <span>👤</span>
+                <small>Perfil</small>
+            </a>
+
+        </nav>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="Java Script/trompo.js"></script>
+
+</body>
+
+</html>

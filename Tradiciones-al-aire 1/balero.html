@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Balero | Tradiciones al Aire</title>
+
+    <link rel="stylesheet" href="estilos/balero.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <div class="decoracion decoracion-1">✦</div>
+    <div class="decoracion decoracion-2">✧</div>
+    <div class="decoracion decoracion-3">◉</div>
+
+    <header class="balero-header">
+
+        <a href="index.html" class="volver">
+            ← Inicio
+        </a>
+
+        <button class="boton-sonido" id="botonSonido" aria-label="Activar o desactivar sonido">
+            🔊
+        </button>
+
+        <div class="etiqueta-juego">
+            🪀 JUEGO TRADICIONAL
+        </div>
+
+        <h1>El Balero</h1>
+
+        <p class="frase">
+            ¡Agarra el palito y mete<br>
+            la punta en el hoyito!
+        </p>
+
+    </header>
+
+    <main>
+
+        <section class="balero-hero">
+
+            <div class="brillo"></div>
+
+            <div class="indicador">
+                <span class="indicador-punto"></span>
+                ZONA DE PRECISIÓN
+            </div>
+
+            <div class="balero-escena" id="escena">
+
+                <!-- CUERDA -->
+                <div class="linea-cuerda" id="lineaCuerda"></div>
+
+                <!-- COPA / CUADRITO CON HOYITO -->
+                <div class="copa-balero" id="copaBalero">
+
+                    <div class="decoracion-copa"></div>
+
+                    <div class="hoyo-balero" id="hoyoBalero">
+                        <span></span>
+                    </div>
+
+                </div>
+
+                <!-- PALITO QUE EL JUGADOR PUEDE ARRASTRAR -->
+                <div
+                    class="palito-balero"
+                    id="palitoBalero"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Arrastra el palito hasta el hoyito"
+                >
+
+                    <div class="mango-palito"></div>
+
+                    <div class="punta-balero"></div>
+
+                </div>
+
+                <div class="sombra-balero"></div>
+
+                <!-- INDICADOR DE ACIERTO -->
+                <div class="zona-exito" id="zonaExito">
+                    🎯
+                </div>
+
+            </div>
+
+            <p class="mensaje-juego" id="mensajeJuego">
+                🖐️ Agarra el palito y llévalo hasta el hoyito
+            </p>
+
+            <button class="boton-lanzar" id="botonLanzar">
+                <span>🪀</span>
+                ¡Empezar!
+            </button>
+
+        </section>
+
+        <!-- MARCADOR -->
+
+        <section class="marcador">
+
+            <div class="marcador-item">
+                <span class="marcador-icono">🎯</span>
+                <small>ACIERTOS</small>
+                <strong id="aciertos">0</strong>
+            </div>
+
+            <div class="marcador-item principal">
+                <span class="marcador-icono">🏆</span>
+                <small>RÉCORD</small>
+                <strong id="record">0</strong>
+            </div>
+
+            <div class="marcador-item">
+                <span class="marcador-icono">🔥</span>
+                <small>RACHA</small>
+                <strong id="racha">0</strong>
+            </div>
+
+        </section>
+
+    </main>
+
+    <nav class="menu-inferior">
+
+        <a href="index.html" class="menu-item">
+            <span>🏠</span>
+            <small>Inicio</small>
+        </a>
+
+        <a href="index.html#juegos" class="menu-item activo">
+            <span>🎮</span>
+            <small>Juegos</small>
+        </a>
+
+        <a href="comunidad.html" class="menu-item">
+            <span>👥</span>
+            <small>Comunidad</small>
+        </a>
+
+        <a href="perfil.html" class="menu-item">
+            <span>👤</span>
+            <small>Perfil</small>
+        </a>
+
+    </nav>
+
+</div>
+
+<script src="Java Script/balero.js"></script>
+
+</body>
+</html>

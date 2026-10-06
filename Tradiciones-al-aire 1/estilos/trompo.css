@@ -1,0 +1,1268 @@
+/* =========================================================
+   TROMPO — ESTILO PRINCIPAL
+========================================================= */
+
+:root {
+    --verde: #159447;
+    --verde-oscuro: #087333;
+    --rojo: #e83b32;
+    --rojo-oscuro: #b92520;
+    --amarillo: #ffd447;
+    --rosa: #ef6f8f;
+    --azul: #2b9dcc;
+    --crema: #fff8e8;
+    --blanco: #ffffff;
+    --texto: #243226;
+    --sombra: rgba(40, 70, 40, 0.18);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: var(--texto);
+
+    background:
+        radial-gradient(circle at 15% 10%, rgba(255, 212, 71, .35), transparent 25%),
+        radial-gradient(circle at 90% 20%, rgba(239, 111, 143, .22), transparent 25%),
+        radial-gradient(circle at 50% 100%, rgba(43, 157, 204, .18), transparent 35%),
+        var(--crema);
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   CONTENEDOR
+========================================================= */
+
+.app {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    padding: 24px 22px 110px;
+    position: relative;
+}
+
+
+/* =========================================================
+   DECORACIONES
+========================================================= */
+
+.decoracion-1,
+.decoracion-2,
+.decoracion-3 {
+    position: fixed;
+    z-index: -1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.decoracion-1 {
+    top: 12%;
+    left: 4%;
+    color: var(--amarillo);
+    font-size: 34px;
+    animation: flotarDecoracion 3s ease-in-out infinite;
+}
+
+.decoracion-2 {
+    top: 32%;
+    right: 5%;
+    color: var(--rosa);
+    font-size: 30px;
+    animation: flotarDecoracion 4s ease-in-out infinite reverse;
+}
+
+.decoracion-3 {
+    bottom: 18%;
+    left: 7%;
+    color: var(--verde);
+    font-size: 28px;
+    animation: girarDecoracion 7s linear infinite;
+}
+
+@keyframes flotarDecoracion {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+}
+
+@keyframes girarDecoracion {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.trompo-header {
+    position: relative;
+    text-align: center;
+    padding: 8px 0 22px;
+}
+
+.volver {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 10px 15px;
+    border-radius: 999px;
+
+    color: var(--verde-oscuro);
+    background: rgba(255, 255, 255, .8);
+
+    text-decoration: none;
+    font-weight: 800;
+
+    box-shadow: 0 5px 15px var(--sombra);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.volver:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--sombra);
+}
+
+#botonSonido {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    width: 46px;
+    height: 46px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--blanco);
+    box-shadow: 0 6px 18px var(--sombra);
+
+    font-size: 20px;
+
+    transition: transform .2s ease;
+}
+
+#botonSonido:hover {
+    transform: scale(1.08) rotate(-5deg);
+}
+
+.etiqueta-juego {
+    display: inline-block;
+
+    margin-bottom: 5px;
+    padding: 6px 13px;
+
+    border-radius: 999px;
+
+    background: var(--amarillo);
+    color: var(--verde-oscuro);
+
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    box-shadow: 0 4px 0 rgba(0, 0, 0, .08);
+
+    animation: etiquetaEntrada .7s ease both;
+}
+
+.trompo-header h1 {
+    position: relative;
+
+    margin-top: 4px;
+
+    color: var(--rojo);
+
+    font-size: clamp(48px, 8vw, 86px);
+    line-height: .95;
+    font-weight: 1000;
+    letter-spacing: -3px;
+
+    text-shadow:
+        4px 4px 0 var(--amarillo),
+        7px 7px 0 rgba(21, 148, 71, .45);
+
+    animation:
+        tituloEntrada .8s cubic-bezier(.2, .8, .2, 1) both,
+        tituloFlota 3.2s ease-in-out 1s infinite;
+}
+
+.trompo-header h1::after {
+    content: "🌀";
+
+    position: absolute;
+    display: inline-block;
+
+    margin-left: 12px;
+
+    font-size: .55em;
+
+    animation: trompoTitulo 2.5s linear infinite;
+}
+
+.frase {
+    margin-top: 12px;
+
+    color: var(--verde-oscuro);
+
+    font-size: clamp(16px, 2.5vw, 22px);
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+@keyframes tituloEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(.9) rotate(-3deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0);
+    }
+}
+
+@keyframes tituloFlota {
+    0%, 100% {
+        transform: translateY(0) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(1deg);
+    }
+}
+
+@keyframes trompoTitulo {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes etiquetaEntrada {
+    from {
+        opacity: 0;
+        transform: scale(.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================================
+   ZONA PRINCIPAL DEL JUEGO
+========================================================= */
+
+.trompo-hero {
+    position: relative;
+
+    min-height: 570px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    padding: 45px 25px 30px;
+
+    border-radius: 38px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.96),
+            rgba(255,248,232,.95)
+        );
+
+    border: 4px solid rgba(21, 148, 71, .12);
+
+    box-shadow:
+        0 22px 55px rgba(50, 80, 50, .14),
+        inset 0 0 0 2px rgba(255,255,255,.7);
+}
+
+.trompo-hero::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 12px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            var(--verde) 0 25%,
+            var(--blanco) 25% 50%,
+            var(--rojo) 50% 75%,
+            var(--amarillo) 75% 100%
+        );
+}
+
+.trompo-hero::after {
+    content: "✦  ✧  ✦  ✧  ✦  ✧  ✦";
+
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: rgba(21, 148, 71, .18);
+
+    font-size: 20px;
+    letter-spacing: 7px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   BRILLO
+========================================================= */
+
+.brillo {
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,212,71,.4),
+            rgba(255,212,71,.12) 45%,
+            transparent 70%
+        );
+
+    animation: brilloPulso 2.5s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+@keyframes brilloPulso {
+    0%, 100% {
+        transform: scale(.95);
+        opacity: .7;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   ESCENA
+========================================================= */
+
+.trompo-escena {
+    position: relative;
+
+    width: min(520px, 90vw);
+    height: 370px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
+}
+
+.linea-trompo {
+    position: absolute;
+
+    bottom: 48px;
+
+    width: 300px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(21, 148, 71, .22),
+            rgba(232, 59, 50, .22),
+            transparent
+        );
+
+    filter: blur(1px);
+}
+
+
+/* =========================================================
+   TROMPO
+========================================================= */
+
+.trompo {
+    position: relative;
+
+    width: 230px;
+    height: 315px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform-origin: 50% 88%;
+
+    z-index: 5;
+
+    filter:
+        drop-shadow(0 14px 10px rgba(30, 50, 30, .16));
+
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.trompo-svg {
+    width: 200px;
+    height: 290px;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   GIRO
+   Se siente como giro sobre el piso,
+   no como espiral.
+========================================================= */
+
+.trompo.girando {
+    animation:
+        girarEnElPiso .34s linear infinite;
+}
+
+@keyframes girarEnElPiso {
+
+    0% {
+        transform:
+            rotate(-2deg)
+            translateY(0);
+    }
+
+    25% {
+        transform:
+            rotate(0deg)
+            translateY(-2px);
+    }
+
+    50% {
+        transform:
+            rotate(2deg)
+            translateY(0);
+    }
+
+    75% {
+        transform:
+            rotate(0deg)
+            translateY(-2px);
+    }
+
+    100% {
+        transform:
+            rotate(-2deg)
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   IMPULSO
+========================================================= */
+
+.trompo.impulso {
+    animation:
+        impulsoTrompo .42s ease;
+}
+
+@keyframes impulsoTrompo {
+
+    0% {
+        transform: rotate(0) scale(1);
+    }
+
+    25% {
+        transform: rotate(-5deg) translateX(-5px) scale(1.02);
+    }
+
+    50% {
+        transform: rotate(5deg) translateX(5px) scale(1.03);
+    }
+
+    75% {
+        transform: rotate(-3deg) translateX(-2px) scale(1.01);
+    }
+
+    100% {
+        transform: rotate(0) scale(1);
+    }
+}
+
+
+/* =========================================================
+   TAMBaleo — DESPUÉS DE 2.5 s
+========================================================= */
+
+.trompo.temblando {
+    animation:
+        temblarTrompo .18s ease-in-out infinite;
+}
+
+@keyframes temblarTrompo {
+
+    0% {
+        transform:
+            rotate(-3deg)
+            translateX(-2px);
+    }
+
+    25% {
+        transform:
+            rotate(3deg)
+            translateX(2px);
+    }
+
+    50% {
+        transform:
+            rotate(-4deg)
+            translateX(-3px);
+    }
+
+    75% {
+        transform:
+            rotate(4deg)
+            translateX(3px);
+    }
+
+    100% {
+        transform:
+            rotate(-3deg)
+            translateX(-2px);
+    }
+}
+
+
+/* =========================================================
+   CELEBRACIÓN
+========================================================= */
+
+.trompo.celebracion {
+    animation:
+        celebracionTrompo .7s ease-in-out;
+}
+
+@keyframes celebracionTrompo {
+
+    0% {
+        transform: scale(1) rotate(0);
+    }
+
+    30% {
+        transform: scale(1.08) rotate(-8deg);
+    }
+
+    60% {
+        transform: scale(1.08) rotate(8deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+
+/* =========================================================
+   SOMBRA DEL TROMPO
+========================================================= */
+
+.sombra-trompo {
+    position: absolute;
+
+    bottom: 42px;
+
+    width: 155px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background: rgba(30, 50, 30, .16);
+
+    filter: blur(7px);
+
+    transform-origin: center;
+
+    z-index: 1;
+
+    animation: sombraRespira 1.8s ease-in-out infinite;
+}
+
+@keyframes sombraRespira {
+
+    0%, 100% {
+        transform: scaleX(1);
+        opacity: .55;
+    }
+
+    50% {
+        transform: scaleX(.82);
+        opacity: .3;
+    }
+}
+
+
+/* =========================================================
+   MENSAJE
+========================================================= */
+
+.mensaje-giro {
+    position: relative;
+    z-index: 10;
+
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: -5px;
+    padding: 10px 20px;
+
+    border-radius: 999px;
+
+    background: var(--blanco);
+
+    color: var(--verde-oscuro);
+
+    font-size: 16px;
+    font-weight: 900;
+    text-align: center;
+
+    box-shadow:
+        0 7px 20px var(--sombra);
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+
+/* =========================================================
+   BOTÓN LANZAR
+========================================================= */
+
+.boton-lanzar {
+    position: relative;
+    z-index: 10;
+
+    margin-top: 18px;
+
+    min-width: 230px;
+
+    padding: 16px 28px;
+
+    border: none;
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--rojo),
+            var(--rojo-oscuro)
+        );
+
+    color: var(--blanco);
+
+    font-size: 18px;
+    font-weight: 1000;
+
+    box-shadow:
+        0 7px 0 var(--rojo-oscuro),
+        0 12px 25px rgba(185, 37, 32, .25);
+
+    transition:
+        transform .15s ease,
+        box-shadow .15s ease;
+}
+
+.boton-lanzar span {
+    margin-right: 6px;
+}
+
+.boton-lanzar:hover:not(:disabled) {
+    transform: translateY(-3px) scale(1.02);
+
+    box-shadow:
+        0 10px 0 var(--rojo-oscuro),
+        0 17px 30px rgba(185, 37, 32, .25);
+}
+
+.boton-lanzar:active:not(:disabled) {
+    transform: translateY(4px);
+
+    box-shadow:
+        0 3px 0 var(--rojo-oscuro),
+        0 7px 15px rgba(185, 37, 32, .2);
+}
+
+.boton-lanzar:disabled {
+    cursor: not-allowed;
+    opacity: .8;
+}
+
+
+/* =========================================================
+   MARCADOR
+========================================================= */
+
+.marcador {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+
+    width: min(650px, 100%);
+
+    margin: 25px auto 0;
+}
+
+.marcador::after {
+    content: "✦  🌀  ✦  🇲🇽  ✦  🌀  ✦";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -34px;
+
+    transform: translateX(-50%);
+
+    color: rgba(21, 148, 71, .22);
+
+    font-size: 15px;
+    letter-spacing: 3px;
+
+    white-space: nowrap;
+}
+
+.marcador > div {
+    padding: 15px 10px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, .9);
+
+    border: 2px solid rgba(21, 148, 71, .1);
+
+    text-align: center;
+
+    box-shadow:
+        0 7px 18px rgba(40, 70, 40, .08);
+
+    transition:
+        transform .2s ease;
+}
+
+.marcador > div:hover {
+    transform: translateY(-3px);
+}
+
+.marcador span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--verde-oscuro);
+
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.marcador strong {
+    display: block;
+
+    color: var(--rojo);
+
+    font-size: 25px;
+    font-weight: 1000;
+}
+
+
+/* =========================================================
+   CHISPAS
+========================================================= */
+
+.chispa {
+    position: absolute;
+
+    color: var(--amarillo);
+
+    font-size: 20px;
+    font-weight: 1000;
+
+    pointer-events: none;
+
+    animation:
+        chispaVolando .8s ease-out forwards;
+
+    z-index: 20;
+}
+
+@keyframes chispaVolando {
+
+    0% {
+        opacity: 0;
+        transform:
+            translate(0, 0)
+            scale(.3)
+            rotate(0);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(
+                calc((var(--x, 0) * 1)),
+                calc((var(--y, -50px) * 1))
+            )
+            scale(1.4)
+            rotate(180deg);
+    }
+}
+
+
+/* =========================================================
+   PARTÍCULAS
+========================================================= */
+
+.particula-trompo {
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--amarillo);
+
+    pointer-events: none;
+
+    animation:
+        particulaTrompo .9s ease-out forwards;
+
+    z-index: 15;
+}
+
+@keyframes particulaTrompo {
+
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(var(--x), var(--y))
+            scale(.2);
+    }
+}
+
+
+/* =========================================================
+   CONFETI
+========================================================= */
+
+.confeti {
+    position: absolute;
+
+    pointer-events: none;
+
+    font-size: 20px;
+    font-weight: 1000;
+
+    animation:
+        confetiCaer 1.6s ease-out forwards;
+
+    z-index: 30;
+}
+
+@keyframes confetiCaer {
+
+    0% {
+        opacity: 1;
+        transform:
+            translate(0, 0)
+            rotate(0)
+            scale(.5);
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(var(--x), var(--y))
+            rotate(500deg)
+            scale(1.2);
+    }
+}
+
+
+/* =========================================================
+   MENÚ INFERIOR
+========================================================= */
+
+.menu-inferior {
+    position: fixed;
+
+    left: 50%;
+    bottom: 14px;
+
+    transform: translateX(-50%);
+
+    z-index: 100;
+
+    width: min(600px, calc(100% - 28px));
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 10px 8px;
+
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, .94);
+
+    border: 2px solid rgba(21, 148, 71, .1);
+
+    box-shadow:
+        0 12px 35px rgba(30, 50, 30, .18);
+
+    backdrop-filter: blur(12px);
+}
+
+.menu-inferior a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+
+    min-width: 65px;
+
+    padding: 6px 8px;
+
+    border-radius: 15px;
+
+    color: var(--verde-oscuro);
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+.menu-inferior a:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255, 212, 71, .25);
+}
+
+.menu-inferior a span:first-child {
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 750px) {
+
+    .app {
+        padding:
+            20px
+            16px
+            105px;
+    }
+
+    .trompo-header {
+        padding-top: 55px;
+    }
+
+    .volver {
+        top: 0;
+        left: 0;
+    }
+
+    #botonSonido {
+        top: 0;
+        right: 0;
+    }
+
+    .trompo-hero {
+        min-height: 540px;
+        padding: 40px 15px 28px;
+        border-radius: 30px;
+    }
+
+    .trompo-escena {
+        width: 100%;
+        height: 340px;
+    }
+
+    .trompo {
+        transform: scale(.82);
+    }
+
+    .trompo.girando {
+        animation:
+            girarEnElPisoMovil .34s linear infinite;
+    }
+
+    @keyframes girarEnElPisoMovil {
+
+        0% {
+            transform: scale(.82) rotate(-2deg) translateY(0);
+        }
+
+        25% {
+            transform: scale(.82) rotate(0) translateY(-2px);
+        }
+
+        50% {
+            transform: scale(.82) rotate(2deg) translateY(0);
+        }
+
+        75% {
+            transform: scale(.82) rotate(0) translateY(-2px);
+        }
+
+        100% {
+            transform: scale(.82) rotate(-2deg) translateY(0);
+        }
+    }
+
+    .marcador {
+        gap: 8px;
+    }
+
+    .marcador > div {
+        padding: 12px 6px;
+    }
+
+    .marcador strong {
+        font-size: 21px;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    .app {
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+
+    .trompo-header h1 {
+        font-size: 52px;
+    }
+
+    .frase {
+        font-size: 15px;
+    }
+
+    .trompo-hero {
+        min-height: 510px;
+        padding-top: 35px;
+    }
+
+    .trompo-escena {
+        height: 320px;
+    }
+
+    .trompo {
+        transform: scale(.72);
+    }
+
+    .trompo.girando {
+        animation:
+            girarEnElPisoPequeno .34s linear infinite;
+    }
+
+    @keyframes girarEnElPisoPequeno {
+
+        0% {
+            transform: scale(.72) rotate(-2deg) translateY(0);
+        }
+
+        25% {
+            transform: scale(.72) rotate(0) translateY(-2px);
+        }
+
+        50% {
+            transform: scale(.72) rotate(2deg) translateY(0);
+        }
+
+        75% {
+            transform: scale(.72) rotate(0) translateY(-2px);
+        }
+
+        100% {
+            transform: scale(.72) rotate(-2deg) translateY(0);
+        }
+    }
+
+    .boton-lanzar {
+        min-width: 210px;
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+
+    .mensaje-giro {
+        max-width: 95%;
+        font-size: 14px;
+    }
+
+    .marcador {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .marcador span {
+        font-size: 10px;
+    }
+
+    .marcador strong {
+        font-size: 18px;
+    }
+
+    .menu-inferior {
+        width: calc(100% - 18px);
+        bottom: 9px;
+    }
+}
+
+
+@media (max-width: 360px) {
+
+    .trompo-header h1 {
+        font-size: 45px;
+    }
+
+    .trompo {
+        transform: scale(.65);
+    }
+
+    .trompo.girando {
+        animation:
+            girarEnElPisoMini .34s linear infinite;
+    }
+
+    @keyframes girarEnElPisoMini {
+
+        0% {
+            transform: scale(.65) rotate(-2deg) translateY(0);
+        }
+
+        25% {
+            transform: scale(.65) rotate(0) translateY(-2px);
+        }
+
+        50% {
+            transform: scale(.65) rotate(2deg) translateY(0);
+        }
+
+        75% {
+            transform: scale(.65) rotate(0) translateY(-2px);
+        }
+
+        100% {
+            transform: scale(.65) rotate(-2deg) translateY(0);
+        }
+    }
+
+    .trompo-hero {
+        min-height: 485px;
+    }
+
+    .trompo-escena {
+        height: 295px;
+    }
+}
+
+
+/* =========================================================
+   REDUCCIÓN DE MOVIMIENTO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}

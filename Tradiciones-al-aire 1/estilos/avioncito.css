@@ -1,0 +1,205 @@
+/* =====================================
+   AVIONCITO | TRADICIONES AL AIRE
+===================================== */
+
+.avion-escena {
+    display: flex;
+    justify-content: center;
+    padding: 14px 0;
+}
+
+.avion-tablero {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.avion-fila {
+    display: flex;
+    gap: 8px;
+}
+
+.casilla {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    border: 3px solid #087443;
+    background: #fff;
+    color: #087443;
+    font-size: 24px;
+    font-weight: 800;
+    cursor: default;
+    user-select: none;
+    touch-action: none;
+
+    box-shadow:
+        0 4px 0 rgba(8, 116, 67, .25);
+
+    transition:
+        transform .15s,
+        background .2s,
+        box-shadow .2s;
+}
+
+.casilla:active {
+    transform: scale(.92);
+}
+
+
+/* =====================================
+   PIEDRITA
+===================================== */
+
+.casilla.piedra {
+    background: #ffd34d;
+    border-color: #d92832;
+    color: #26352f;
+
+    box-shadow:
+        0 4px 0 rgba(217, 40, 50, .25);
+}
+
+
+/* =====================================
+   CASILLA PISADA
+===================================== */
+
+.casilla.pisada {
+    background: #087443;
+    color: #fff;
+}
+
+
+/* =====================================
+   ERROR
+===================================== */
+
+.casilla.error {
+    animation: sacudir .4s;
+    border-color: #d92832;
+}
+
+@keyframes sacudir {
+
+    25% {
+        transform: translateX(-7px);
+    }
+
+    75% {
+        transform: translateX(7px);
+    }
+}
+
+
+/* =====================================
+   TÍTULO ANIMADO
+===================================== */
+
+.balero-header h1 {
+    animation: moverTituloAvion 2.5s ease-in-out infinite;
+}
+
+@keyframes moverTituloAvion {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-6px) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateY(0) rotate(1deg);
+    }
+
+    75% {
+        transform: translateY(-6px) rotate(-1deg);
+    }
+}
+
+
+/* =====================================
+   JUGADOR DEL AVIONCITO
+===================================== */
+
+.casilla.jugador {
+    position: relative;
+
+    background: #fff;
+
+    box-shadow:
+        0 0 0 4px #ffd34d,
+        0 7px 0 rgba(8, 116, 67, .25);
+
+    transform: scale(1.08);
+
+    z-index: 5;
+}
+
+.casilla.jugador::after {
+    content: "✈️";
+
+    position: absolute;
+
+    font-size: 30px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+/* =====================================
+   TABLERO MÁS COMPACTO EN CELULAR
+===================================== */
+
+@media (max-width: 400px) {
+
+    .avion-escena {
+        padding: 10px 0;
+    }
+
+    .avion-tablero {
+        gap: 7px;
+    }
+
+    .avion-fila {
+        gap: 7px;
+    }
+
+    .casilla {
+        width: 54px;
+        height: 54px;
+        border-radius: 12px;
+        font-size: 21px;
+    }
+
+    .casilla.jugador::after {
+        font-size: 26px;
+    }
+}
+
+
+/* =====================================
+   CELULARES MUY PEQUEÑOS
+===================================== */
+
+@media (max-width: 330px) {
+
+    .casilla {
+        width: 50px;
+        height: 50px;
+        font-size: 19px;
+    }
+
+    .casilla.jugador::after {
+        font-size: 23px;
+    }
+}

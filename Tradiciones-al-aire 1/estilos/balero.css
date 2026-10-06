@@ -1,0 +1,921 @@
+/* =====================================================
+   BALERO - TRADICIONES AL AIRE
+   ===================================================== */
+
+:root {
+    --azul: #2864e8;
+    --azul-oscuro: #1744a5;
+    --morado: #7146d9;
+    --rosa: #f05a9d;
+    --amarillo: #ffd447;
+    --turquesa: #35c9bd;
+
+    --madera: #c9823d;
+    --madera-clara: #e9a95f;
+    --madera-oscura: #925125;
+
+    --fondo: #f5f7ff;
+    --blanco: #ffffff;
+    --texto: #252b42;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(240, 90, 157, .10), transparent 25%),
+        radial-gradient(circle at 85% 15%, rgba(40, 100, 232, .12), transparent 25%),
+        linear-gradient(135deg, #f8f9ff, #eef2ff);
+
+    color: var(--texto);
+    overflow-x: hidden;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 75px;
+}
+
+/* =====================================================
+   DECORACIÓN
+   ===================================================== */
+
+.decoracion {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    opacity: .18;
+    font-size: 70px;
+}
+
+.decoracion-1 {
+    top: 10%;
+    left: 3%;
+    color: var(--rosa);
+    animation: flotar 4s ease-in-out infinite;
+}
+
+.decoracion-2 {
+    top: 30%;
+    right: 4%;
+    color: var(--azul);
+    animation: flotar 5s ease-in-out infinite reverse;
+}
+
+.decoracion-3 {
+    bottom: 15%;
+    left: 7%;
+    color: var(--amarillo);
+    animation: flotar 4.5s ease-in-out infinite;
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.balero-header {
+    width: min(1100px, 94%);
+    margin: auto;
+    padding: 25px 0 10px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.volver {
+    position: absolute;
+    left: 0;
+    top: 25px;
+
+    text-decoration: none;
+    color: var(--azul);
+    font-weight: 800;
+
+    padding: 9px 15px;
+    border-radius: 14px;
+    background: rgba(255,255,255,.85);
+
+    transition: .2s ease;
+}
+
+.volver:hover {
+    transform: translateX(-3px);
+}
+
+.boton-sonido {
+    position: absolute;
+    right: 0;
+    top: 25px;
+
+    border: 0;
+    background: var(--blanco);
+
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+
+    box-shadow: 0 6px 18px rgba(40, 50, 100, .12);
+    font-size: 19px;
+
+    transition: .2s ease;
+}
+
+.boton-sonido:hover {
+    transform: scale(1.08);
+}
+
+.etiqueta-juego {
+    display: inline-block;
+
+    background: var(--azul);
+    color: white;
+
+    padding: 7px 16px;
+    border-radius: 30px;
+
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    box-shadow: 0 7px 20px rgba(40, 100, 232, .20);
+}
+
+.balero-header h1 {
+    margin-top: 8px;
+
+    font-size: clamp(38px, 6vw, 70px);
+    line-height: .95;
+
+    font-weight: 1000;
+
+    background: linear-gradient(
+        90deg,
+        var(--azul),
+        var(--morado),
+        var(--rosa)
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.frase {
+    margin-top: 10px;
+
+    color: #636b83;
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+/* =====================================================
+   ÁREA DEL JUEGO
+   ===================================================== */
+
+main {
+    width: min(1100px, 94%);
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.balero-hero {
+    position: relative;
+
+    background: rgba(255,255,255,.92);
+    border-radius: 30px;
+
+    padding: 18px 18px 20px;
+
+    box-shadow:
+        0 20px 55px rgba(50, 60, 120, .13);
+
+    overflow: hidden;
+}
+
+.brillo {
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    top: -190px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: var(--amarillo);
+    opacity: .10;
+
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.indicador {
+    width: fit-content;
+    margin: 0 auto 7px;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    color: var(--morado);
+}
+
+.indicador-punto {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--rosa);
+
+    animation: pulsar 1.2s ease-in-out infinite;
+}
+
+/* =====================================================
+   ESCENA
+   ===================================================== */
+
+.balero-escena {
+    position: relative;
+
+    width: min(800px, 100%);
+    height: min(450px, 58vh);
+
+    min-height: 330px;
+
+    margin: auto;
+
+    border-radius: 25px;
+
+    background:
+        radial-gradient(circle at 50% 40%, rgba(255,255,255,.8), transparent 35%),
+        linear-gradient(145deg, #eaf1ff, #f9eefe);
+
+    border: 3px solid rgba(40,100,232,.08);
+
+    overflow: hidden;
+
+    touch-action: none;
+}
+
+/* =====================================================
+   CUERDA
+   ===================================================== */
+
+.linea-cuerda {
+    position: absolute;
+
+    height: 5px;
+
+    background: var(--madera-oscura);
+
+    border-radius: 10px;
+
+    transform-origin: left center;
+
+    z-index: 2;
+
+    opacity: .9;
+}
+
+/* =====================================================
+   COPA / CUADRITO
+   ===================================================== */
+
+.copa-balero {
+    position: absolute;
+
+    top: 45px;
+    left: 50%;
+
+    width: 190px;
+    height: 130px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--madera-clara),
+            var(--madera),
+            var(--madera-oscura)
+        );
+
+    border-radius: 18px 18px 35px 35px;
+
+    border: 6px solid var(--madera-oscura);
+
+    box-shadow:
+        inset 0 8px 0 rgba(255,255,255,.18),
+        0 13px 25px rgba(80,50,20,.22);
+
+    z-index: 4;
+}
+
+.decoracion-copa {
+    position: absolute;
+
+    width: 70%;
+    height: 7px;
+
+    left: 15%;
+    bottom: 22px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,.18);
+}
+
+/* =====================================================
+   HOYITO
+   ===================================================== */
+
+.hoyo-balero {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 62px;
+    height: 62px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #241c2c 0 42%,
+            #493140 43% 55%,
+            #e5a25a 56% 100%
+        );
+
+    border: 5px solid #6f3b20;
+
+    box-shadow:
+        inset 0 5px 9px rgba(0,0,0,.45),
+        0 0 0 7px rgba(255,255,255,.08);
+
+    z-index: 5;
+}
+
+.hoyo-balero span {
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    background: rgba(255,255,255,.25);
+
+    border-radius: 50%;
+
+    top: 12px;
+    left: 14px;
+}
+
+/* =====================================================
+   PALITO ARRASTRABLE
+   ===================================================== */
+
+.palito-balero {
+    position: absolute;
+
+    left: calc(50% - 21px);
+    top: 275px;
+
+    width: 42px;
+    height: 145px;
+
+    z-index: 8;
+
+    cursor: grab;
+
+    touch-action: none;
+    user-select: none;
+
+    transform: rotate(-12deg);
+
+    transition:
+        box-shadow .15s ease,
+        filter .15s ease;
+}
+
+.palito-balero:focus {
+    outline: none;
+}
+
+.palito-balero.agarrado {
+    cursor: grabbing;
+
+    filter: brightness(1.08) drop-shadow(
+        0 8px 10px rgba(40, 40, 60, .25)
+    );
+
+    z-index: 20;
+}
+
+.mango-palito {
+    position: absolute;
+
+    left: 9px;
+    bottom: 0;
+
+    width: 24px;
+    height: 125px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--madera-oscura),
+            var(--madera-clara),
+            var(--madera)
+        );
+
+    border: 4px solid var(--madera-oscura);
+
+    box-shadow:
+        inset 3px 0 rgba(255,255,255,.18),
+        3px 5px 10px rgba(60,40,20,.25);
+}
+
+.punta-balero {
+    position: absolute;
+
+    top: -8px;
+    left: 50%;
+
+    width: 30px;
+    height: 30px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--madera-clara),
+            var(--madera-oscura)
+        );
+
+    border-radius: 50% 50% 45% 45%;
+
+    border: 4px solid var(--madera-oscura);
+
+    z-index: 3;
+
+    box-shadow: 0 3px 7px rgba(50,30,10,.25);
+}
+
+.punta-balero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    left: 7px;
+    top: 5px;
+
+    background: rgba(255,255,255,.3);
+
+    border-radius: 50%;
+}
+
+/* =====================================================
+   SOMBRA
+   ===================================================== */
+
+.sombra-balero {
+    position: absolute;
+
+    width: 180px;
+    height: 25px;
+
+    left: 50%;
+    bottom: 20px;
+
+    transform: translateX(-50%);
+
+    background: rgba(50,40,80,.12);
+
+    filter: blur(9px);
+
+    border-radius: 50%;
+}
+
+/* =====================================================
+   ZONA DE ÉXITO
+   ===================================================== */
+
+.zona-exito {
+    position: absolute;
+
+    width: 88px;
+    height: 88px;
+
+    left: 50%;
+    top: 50px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    border: 3px dashed rgba(255,255,255,.8);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: .2s ease;
+
+    z-index: 3;
+}
+
+.balero-escena.cerca .zona-exito {
+    opacity: 1;
+
+    animation: objetivo 1s ease-in-out infinite;
+}
+
+/* =====================================================
+   MENSAJE
+   ===================================================== */
+
+.mensaje-juego {
+    text-align: center;
+
+    margin: 12px auto;
+
+    color: #59627b;
+
+    font-weight: 800;
+    font-size: 15px;
+
+    min-height: 22px;
+}
+
+/* =====================================================
+   BOTÓN
+   ===================================================== */
+
+.boton-lanzar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    margin: 0 auto;
+
+    border: 0;
+
+    padding: 12px 25px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--azul),
+            var(--morado)
+        );
+
+    color: white;
+
+    font-weight: 900;
+    font-size: 15px;
+
+    box-shadow:
+        0 9px 20px rgba(65,70,190,.25);
+
+    transition: .2s ease;
+}
+
+.boton-lanzar:hover {
+    transform: translateY(-2px) scale(1.02);
+}
+
+.boton-lanzar:active {
+    transform: scale(.97);
+}
+
+/* =====================================================
+   MARCADOR
+   ===================================================== */
+
+.marcador {
+    width: min(700px, 100%);
+
+    margin: 15px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.marcador-item {
+    background: rgba(255,255,255,.88);
+
+    border-radius: 20px;
+
+    padding: 10px;
+
+    text-align: center;
+
+    box-shadow: 0 8px 20px rgba(50,60,120,.08);
+}
+
+.marcador-icono {
+    display: block;
+
+    font-size: 21px;
+    margin-bottom: 2px;
+}
+
+.marcador-item small {
+    display: block;
+
+    color: #7b8196;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.marcador-item strong {
+    display: block;
+
+    margin-top: 1px;
+
+    font-size: 24px;
+
+    color: var(--azul);
+}
+
+.marcador-item.principal strong {
+    color: var(--morado);
+}
+
+/* =====================================================
+   MENÚ INFERIOR
+   ===================================================== */
+
+.menu-inferior {
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 68px;
+
+    background: rgba(255,255,255,.95);
+
+    backdrop-filter: blur(12px);
+
+    border-top: 1px solid rgba(60,70,120,.08);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: clamp(18px, 7vw, 75px);
+
+    z-index: 100;
+}
+
+.menu-item {
+    text-decoration: none;
+
+    color: #7b8196;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 2px;
+
+    font-weight: 800;
+
+    transition: .2s ease;
+}
+
+.menu-item span {
+    font-size: 21px;
+}
+
+.menu-item small {
+    font-size: 10px;
+}
+
+.menu-item:hover,
+.menu-item.activo {
+    color: var(--azul);
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   ESTADOS DEL JUEGO
+   ===================================================== */
+
+.balero-escena.acierto .hoyo-balero {
+    box-shadow:
+        0 0 0 8px rgba(53,201,189,.35),
+        0 0 30px rgba(53,201,189,.7);
+}
+
+.balero-escena.acierto .palito-balero {
+    filter: drop-shadow(
+        0 0 12px rgba(53,201,189,.8)
+    );
+}
+
+.balero-escena.fallo .palito-balero {
+    animation: pequenoError .4s ease;
+}
+
+@keyframes pequenoError {
+
+    0%, 100% {
+        transform: rotate(-12deg);
+    }
+
+    25% {
+        transform: rotate(-19deg) translateX(-7px);
+    }
+
+    75% {
+        transform: rotate(-5deg) translateX(7px);
+    }
+}
+
+/* =====================================================
+   ANIMACIONES
+   ===================================================== */
+
+@keyframes flotar {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes pulsar {
+
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: .5;
+    }
+}
+
+@keyframes objetivo {
+
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.08);
+    }
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .balero-header {
+        padding-top: 18px;
+    }
+
+    .volver {
+        top: 18px;
+        font-size: 13px;
+        padding: 7px 10px;
+    }
+
+    .boton-sonido {
+        top: 18px;
+        width: 38px;
+        height: 38px;
+    }
+
+    .balero-header h1 {
+        margin-top: 12px;
+    }
+
+    .balero-hero {
+        padding: 14px 10px 15px;
+        border-radius: 24px;
+    }
+
+    .balero-escena {
+        height: 430px;
+        min-height: 0;
+    }
+
+    .copa-balero {
+        width: 160px;
+        height: 112px;
+    }
+
+    .hoyo-balero {
+        width: 54px;
+        height: 54px;
+    }
+
+    .palito-balero {
+        top: 270px;
+    }
+
+    .marcador-item {
+        padding: 8px 5px;
+    }
+
+    .marcador-icono {
+        font-size: 18px;
+    }
+
+    .marcador-item strong {
+        font-size: 21px;
+    }
+
+    .menu-inferior {
+        gap: 25px;
+    }
+}
+
+@media (max-height: 700px) and (min-width: 701px) {
+
+    .balero-header {
+        padding-top: 12px;
+    }
+
+    .balero-header h1 {
+        font-size: 48px;
+    }
+
+    .balero-escena {
+        height: 350px;
+    }
+
+    .copa-balero {
+        top: 28px;
+    }
+
+    .palito-balero {
+        top: 205px;
+    }
+
+    .marcador {
+        margin-top: 10px;
+    }
+}

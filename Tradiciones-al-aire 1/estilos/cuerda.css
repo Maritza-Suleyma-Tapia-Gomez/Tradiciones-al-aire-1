@@ -1,0 +1,693 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background:
+        radial-gradient(circle at 10% 15%, #fff4a8 0 45px, transparent 46px),
+        linear-gradient(180deg, #fff0f7, #fffafd);
+    color: #4a2940;
+}
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.encabezado {
+    padding: 18px 15px 10px;
+}
+
+.barra-superior {
+    position: relative;
+    width: min(100%, 950px);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton-inicio {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 16px;
+    border-radius: 15px;
+    background: white;
+    color: #e83e8c;
+    text-decoration: none;
+    font-weight: 900;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, .13);
+    transition: .2s;
+}
+
+.boton-inicio:hover {
+    transform: translateX(-3px);
+    background: #fff0f7;
+}
+
+.fila-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+h1 {
+    color: #e83e8c;
+    font-size: clamp(2rem, 7vw, 3.3rem);
+    font-weight: 900;
+    text-shadow: 3px 3px 0 #ffd1e5;
+    animation: tituloBonito 2.5s ease-in-out infinite;
+}
+
+@keyframes tituloBonito {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(-2deg);
+    }
+}
+
+.boton-sonido {
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: white;
+    font-size: 21px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+}
+
+.etiqueta {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: #e83e8c;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.frase {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.juego {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 10px 15px 30px;
+}
+
+/* =========================
+   ESCENA
+========================= */
+
+.escena {
+    position: relative;
+    width: min(94vw, 820px);
+    height: 420px;
+    margin: 18px auto 10px;
+    overflow: hidden;
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #9bdcff 0%,
+            #dff5ff 65%,
+            #ffe5ad 65%,
+            #ffd38b 100%
+        );
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+}
+
+/* =========================
+   DECORACIONES
+========================= */
+
+.sol {
+    position: absolute;
+    top: 18px;
+    right: 35px;
+    font-size: 52px;
+    z-index: 1;
+    animation: solMovimiento 3s ease-in-out infinite;
+}
+
+@keyframes solMovimiento {
+    0%, 100% {
+        transform: rotate(-5deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(5deg) scale(1.08);
+    }
+}
+
+.nube {
+    position: absolute;
+    font-size: 48px;
+    opacity: .9;
+    z-index: 1;
+    animation: nubeMovimiento 7s ease-in-out infinite;
+}
+
+.nube-1 {
+    left: 70px;
+    top: 55px;
+}
+
+.nube-2 {
+    right: 170px;
+    top: 95px;
+    font-size: 38px;
+    animation-delay: -3s;
+}
+
+@keyframes nubeMovimiento {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(18px);
+    }
+}
+
+.papel-picado {
+    position: absolute;
+    top: 7px;
+    font-size: 23px;
+    letter-spacing: 5px;
+    z-index: 2;
+}
+
+.papel-1 {
+    left: 18px;
+}
+
+.papel-2 {
+    right: 18px;
+}
+
+/* =========================
+   SUELO
+========================= */
+
+.suelo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 95px;
+    background: #f4cb82;
+    border-top: 5px solid #e3b66a;
+    z-index: 3;
+}
+
+/* =========================
+   PERSONAS
+========================= */
+
+.persona {
+    position: absolute;
+    bottom: 72px;
+    width: 85px;
+    height: 230px;
+    z-index: 5;
+}
+
+.persona-izquierda {
+    left: 8%;
+}
+
+.persona-derecha {
+    right: 8%;
+}
+
+/* CABEZA */
+
+.cabeza {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    left: 13px;
+    top: 0;
+    border-radius: 50%;
+    background: #f4bd91;
+    border: 3px solid #4a2940;
+}
+
+/* CABELLO */
+
+.cabello {
+    position: absolute;
+    width: 63px;
+    height: 37px;
+    left: 10px;
+    top: -5px;
+    border-radius: 50% 50% 35% 35%;
+    background: #573520;
+    z-index: 3;
+}
+
+/* CUERPO */
+
+.cuerpo {
+    position: absolute;
+    width: 68px;
+    height: 92px;
+    left: 8px;
+    top: 60px;
+    border-radius: 25px 25px 12px 12px;
+    background: #58afe8;
+    border: 3px solid #4a2940;
+}
+
+/* BRAZOS */
+
+.brazo {
+    position: absolute;
+    width: 15px;
+    height: 96px;
+    top: 67px;
+    border-radius: 15px;
+    background: #f4bd91;
+    border: 3px solid #4a2940;
+    transform-origin: top center;
+}
+
+.brazo-izquierdo {
+    left: -3px;
+    transform: rotate(42deg);
+}
+
+.brazo-derecho {
+    right: -3px;
+    transform: rotate(-42deg);
+}
+
+/* PIERNAS */
+
+.pierna {
+    position: absolute;
+    width: 17px;
+    height: 85px;
+    top: 145px;
+    border-radius: 12px;
+    background: #4a2940;
+}
+
+.pierna-izquierda {
+    left: 22px;
+}
+
+.pierna-derecha {
+    right: 22px;
+}
+
+/* MANOS */
+
+.mano {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 145px;
+    border-radius: 50%;
+    background: #f4bd91;
+    z-index: 8;
+}
+
+.mano-izquierda {
+    right: -8px;
+}
+
+.mano-derecha {
+    left: -8px;
+}
+
+/* =========================
+   NIÑA
+========================= */
+
+.saltadora {
+    position: absolute;
+    left: 50%;
+    bottom: 72px;
+    width: 90px;
+    height: 235px;
+    transform: translateX(-50%);
+    z-index: 10;
+    transform-origin: bottom center;
+}
+
+.saltadora.saltando {
+    animation: salto .42s ease-out;
+}
+
+@keyframes salto {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    45% {
+        transform: translateX(-50%) translateY(-80px);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.cabello-saltadora {
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    left: 9px;
+    top: -7px;
+    border-radius: 50%;
+    background: #553421;
+}
+
+.cabeza-saltadora {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    left: 16px;
+    top: 4px;
+    border-radius: 50%;
+    background: #f6c29a;
+    border: 3px solid #4a2940;
+    z-index: 2;
+}
+
+.ojo {
+    position: absolute;
+    width: 6px;
+    height: 8px;
+    top: 23px;
+    border-radius: 50%;
+    background: #35212d;
+}
+
+.ojo-izquierdo {
+    left: 17px;
+}
+
+.ojo-derecho {
+    right: 17px;
+}
+
+.sonrisa {
+    position: absolute;
+    width: 15px;
+    height: 8px;
+    left: 19px;
+    top: 35px;
+    border-bottom: 3px solid #d85b74;
+    border-radius: 50%;
+}
+
+.vestido {
+    position: absolute;
+    width: 72px;
+    height: 100px;
+    left: 9px;
+    top: 61px;
+    background: #f06ca4;
+    border: 3px solid #4a2940;
+    border-radius: 25px 25px 35px 35px;
+}
+
+.brazo-saltadora {
+    position: absolute;
+    width: 13px;
+    height: 82px;
+    top: 70px;
+    background: #f6c29a;
+    border: 3px solid #4a2940;
+    border-radius: 15px;
+}
+
+.brazo-saltadora-izquierdo {
+    left: 5px;
+    transform: rotate(40deg);
+}
+
+.brazo-saltadora-derecho {
+    right: 5px;
+    transform: rotate(-40deg);
+}
+
+.pierna-saltadora {
+    position: absolute;
+    width: 15px;
+    height: 72px;
+    top: 151px;
+    background: #f6c29a;
+    border: 3px solid #4a2940;
+    border-radius: 15px;
+}
+
+.pierna-saltadora-izquierda {
+    left: 28px;
+}
+
+.pierna-saltadora-derecha {
+    right: 28px;
+}
+
+/* =========================
+   CUERDA
+========================= */
+
+.cuerda {
+    position: absolute;
+    left: 11%;
+    right: 11%;
+    bottom: 75px;
+    height: 260px;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.cuerda svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.cuerda path {
+    fill: none;
+    stroke: #70452d;
+    stroke-width: 9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 3px 2px rgba(0, 0, 0, .25));
+}
+
+/* =========================
+   INFORMACIÓN DEL NIVEL
+========================= */
+
+.informacion-nivel {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 13px auto 4px;
+}
+
+.informacion-nivel span {
+    padding: 7px 15px;
+    border-radius: 20px;
+    background: white;
+    font-size: 14px;
+    font-weight: 900;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+}
+
+/* =========================
+   MENSAJE
+========================= */
+
+.mensaje {
+    min-height: 28px;
+    margin: 10px 0 15px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* =========================
+   BOTÓN
+========================= */
+
+.boton-jugar {
+    border: none;
+    border-radius: 18px;
+    padding: 15px 30px;
+    background: #e83e8c;
+    color: white;
+    font-size: 18px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 7px 0 #b72869;
+    transition: transform .1s, box-shadow .1s;
+}
+
+.boton-jugar:active {
+    transform: translateY(4px);
+    box-shadow: 0 3px 0 #b72869;
+}
+
+/* =========================
+   MARCADOR
+========================= */
+
+.marcador {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 22px;
+    flex-wrap: wrap;
+}
+
+.marcador-caja {
+    min-width: 115px;
+    padding: 13px 18px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+}
+
+.marcador-caja span {
+    display: block;
+    font-size: 22px;
+}
+
+.marcador-caja strong {
+    display: block;
+    font-size: 25px;
+    color: #e83e8c;
+}
+
+.marcador-caja small {
+    color: #777;
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .encabezado {
+        padding-top: 15px;
+    }
+
+    .barra-superior {
+        padding-top: 42px;
+    }
+
+    .boton-inicio {
+        top: 0;
+        left: 5px;
+    }
+
+    .escena {
+        height: 350px;
+    }
+
+    .persona {
+        transform: scale(.72);
+        transform-origin: bottom center;
+    }
+
+    .persona-izquierda {
+        left: 0;
+    }
+
+    .persona-derecha {
+        right: 0;
+    }
+
+    .saltadora {
+        transform: translateX(-50%) scale(.82);
+        transform-origin: bottom center;
+    }
+
+    .saltadora.saltando {
+        animation: saltoMovil .42s ease-out;
+    }
+
+    @keyframes saltoMovil {
+        0% {
+            transform: translateX(-50%) scale(.82) translateY(0);
+        }
+
+        45% {
+            transform: translateX(-50%) scale(.82) translateY(-70px);
+        }
+
+        100% {
+            transform: translateX(-50%) scale(.82) translateY(0);
+        }
+    }
+
+    .cuerda {
+        left: 4%;
+        right: 4%;
+        bottom: 65px;
+    }
+
+    .sol {
+        font-size: 42px;
+        right: 15px;
+    }
+
+    .nube-1 {
+        left: 30px;
+    }
+
+    .nube-2 {
+        right: 90px;
+    }
+
+    .marcador {
+        gap: 9px;
+    }
+
+    .marcador-caja {
+        min-width: 95px;
+        padding: 11px 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    h1,
+    .sol,
+    .nube {
+        animation: none;
+    }
+}

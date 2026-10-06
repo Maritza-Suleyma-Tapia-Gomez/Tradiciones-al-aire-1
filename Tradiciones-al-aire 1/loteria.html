@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Lotería | Tradiciones al Aire
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="estilos/loteria.css">
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- =================================
+         DECORACIÓN MEXICANA
+    ================================== -->
+
+    <div class="decoracion decoracion-1">
+        ✦
+    </div>
+
+    <div class="decoracion decoracion-2">
+        ✧
+    </div>
+
+    <div class="decoracion decoracion-3">
+        🎴
+    </div>
+
+    <div class="decoracion decoracion-4">
+        🌽
+    </div>
+
+    <div class="decoracion decoracion-5">
+        🌽
+    </div>
+
+
+    <!-- =================================
+         PAPEL PICADO
+    ================================== -->
+
+    <div class="papel-picado">
+
+        <span>🔴</span>
+        <span>🟡</span>
+        <span>🟢</span>
+        <span>🔴</span>
+        <span>🟡</span>
+        <span>🟢</span>
+        <span>🔴</span>
+        <span>🟡</span>
+        <span>🟢</span>
+
+    </div>
+
+
+    <!-- =================================
+         ENCABEZADO
+    ================================== -->
+
+    <header class="loteria-header">
+
+
+        <a
+            href="index.html"
+            class="volver">
+
+            ← Inicio
+
+        </a>
+
+
+        <button
+            class="boton-sonido"
+            id="botonSonido"
+            aria-label="Activar o desactivar sonido">
+
+            🔊
+
+        </button>
+
+
+        <div class="etiqueta-juego">
+
+            🎴 JUEGO TRADICIONAL MEXICANO
+
+        </div>
+
+
+        <h1>
+
+            ¡La Lotería!
+
+        </h1>
+
+
+        <p class="frase">
+
+            ¡Corre que se acaba! 🎴<br>
+
+            Escucha, busca y marca tu carta.
+
+        </p>
+
+
+        <div class="decoracion-titulo">
+
+            🌽 ✨ 🎴 ✨ 🌽
+
+        </div>
+
+
+    </header>
+
+
+    <!-- =================================
+         ZONA PRINCIPAL DEL JUEGO
+    ================================== -->
+
+    <main class="zona-juego">
+
+
+        <!-- =================================
+             LADO IZQUIERDO
+        ================================== -->
+
+        <section class="panel-juego">
+
+
+            <div class="etiqueta-panel">
+
+                🎴 CARTA QUE SALIÓ
+
+            </div>
+
+
+            <!-- CARTA ACTUAL -->
+
+            <div class="carta-destacada">
+
+
+                <div
+                    class="carta-marco"
+                    id="cartaMarco">
+
+
+                    <div
+                        class="carta-imagen"
+                        id="cartaImagen">
+
+                        🃏
+
+                    </div>
+
+
+                    <div
+                        class="carta-nombre"
+                        id="cartaNombre">
+
+                        ¡Presiona comenzar!
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="carta-brillitos">
+
+                    ✨ ✦ ✨
+
+                </div>
+
+
+            </div>
+
+
+            <p
+                class="mensaje-carta"
+                id="mensajeCarta">
+
+                Cuando salga una carta,
+                búscala en tu tablero.
+
+            </p>
+
+
+            <!-- BOTONES DE CARTA -->
+
+            <div class="botones-carta">
+
+
+                <button
+                    class="boton-sacar"
+                    id="botonSacar">
+
+                    <span>🎴</span>
+
+                    ¡Sacar carta!
+
+                </button>
+
+
+                <button
+                    class="boton-cantar"
+                    id="botonCantar">
+
+                    <span>🔊</span>
+
+                    Cantar carta
+
+                </button>
+
+
+            </div>
+
+
+            <!-- COMENZAR -->
+
+            <button
+                class="boton-principal"
+                id="botonComenzar">
+
+                🎮 Comenzar partida
+
+            </button>
+
+
+            <!-- NUEVA -->
+
+            <button
+                class="boton-secundario"
+                id="botonNueva">
+
+                🔄 Nueva partida
+
+            </button>
+
+
+        </section>
+
+
+        <!-- =================================
+             LADO DERECHO
+        ================================== -->
+
+        <section class="panel-tablero">
+
+
+            <div class="tablero-cabecera">
+
+
+                <div>
+
+                    <small>
+
+                        🌽 TU TABLERO 🌽
+
+                    </small>
+
+
+                    <h2>
+
+                        ¡Marca tus cartas!
+
+                    </h2>
+
+                </div>
+
+
+                <span
+                    class="progreso-tablero"
+                    id="progresoTablero">
+
+                    0 / 16
+
+                </span>
+
+
+            </div>
+
+
+            <!-- TABLERO -->
+
+            <div
+                class="tablero"
+                id="tablero"
+                aria-label="Tablero de lotería">
+
+            </div>
+
+
+            <p class="instruccion-tablero">
+
+                🎴 Encuentra la carta que salió
+                y tócala para marcarla.
+
+            </p>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =================================
+         MARCADOR
+    ================================== -->
+
+    <section class="marcador">
+
+
+        <div class="marcador-item">
+
+            <span class="marcador-icono">
+
+                🎴
+
+            </span>
+
+
+            <small>
+
+                CARTAS
+
+            </small>
+
+
+            <strong id="cartasSalidas">
+
+                0
+
+            </strong>
+
+        </div>
+
+
+        <div
+            class="marcador-item principal">
+
+            <span class="marcador-icono">
+
+                🎯
+
+            </span>
+
+
+            <small>
+
+                ACERTADAS
+
+            </small>
+
+
+            <strong id="cartasAcertadas">
+
+                0
+
+            </strong>
+
+        </div>
+
+
+        <div class="marcador-item">
+
+            <span class="marcador-icono">
+
+                🏆
+
+            </span>
+
+
+            <small>
+
+                VICTORIAS
+
+            </small>
+
+
+            <strong id="victorias">
+
+                0
+
+            </strong>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =================================
+         RESULTADO
+    ================================== -->
+
+    <section
+        class="resultado-card"
+        id="resultadoCard">
+
+
+        <div
+            class="resultado-icono"
+            id="resultadoIcono">
+
+            🏆
+
+        </div>
+
+
+        <div>
+
+            <span>
+
+                RESULTADO
+
+            </span>
+
+
+            <h2 id="resultadoTitulo">
+
+                ¡Partida terminada!
+
+            </h2>
+
+
+            <p id="resultadoTexto">
+
+                Completa tu tablero para ganar.
+
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =================================
+         NAVEGACIÓN
+    ================================== -->
+
+    <nav class="menu-inferior">
+
+
+        <a
+            href="index.html"
+            class="menu-item">
+
+            <span>🏠</span>
+
+            <small>
+                Inicio
+            </small>
+
+        </a>
+
+
+        <a
+            href="index.html#juegos"
+            class="menu-item activo">
+
+            <span>🎮</span>
+
+            <small>
+                Juegos
+            </small>
+
+        </a>
+
+
+        <a
+            href="comunidad.html"
+            class="menu-item">
+
+            <span>👥</span>
+
+            <small>
+                Comunidad
+            </small>
+
+        </a>
+
+
+        <a
+            href="perfil.html"
+            class="menu-item">
+
+            <span>👤</span>
+
+            <small>
+                Perfil
+            </small>
+
+        </a>
+
+
+    </nav>
+
+
+</div>
+
+
+<script
+    src="Java Script/loteria.js">
+</script>
+
+</body>
+
+</html>

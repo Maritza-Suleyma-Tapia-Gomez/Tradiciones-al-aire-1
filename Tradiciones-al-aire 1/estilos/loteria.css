@@ -1,0 +1,2101 @@
+/* =====================================
+   LOTERÍA | TRADICIONES AL AIRE
+   DISEÑO MEXICANO 🎴🌽🇲🇽
+===================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap');
+
+
+/* =====================================
+   VARIABLES
+===================================== */
+
+:root {
+
+    --rojo: #d92332;
+    --rojo-fuerte: #b91525;
+    --rojo-claro: #f05b61;
+
+    --verde: #087443;
+    --verde-claro: #20a866;
+
+    --amarillo: #ffd447;
+    --amarillo-claro: #fff1a8;
+
+    --blanco: #ffffff;
+    --crema: #fffaf0;
+
+    --texto: #272727;
+    --gris: #68736d;
+
+    --rosa: #ff8f9a;
+
+    --sombra:
+        0 18px 45px rgba(70, 30, 20, .13);
+
+    --sombra-fuerte:
+        0 20px 50px rgba(70, 20, 20, .20);
+}
+
+
+/* =====================================
+   RESET
+===================================== */
+
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family:
+        "Fredoka",
+        "Trebuchet MS",
+        sans-serif;
+
+    color: var(--texto);
+
+    min-height: 100vh;
+
+    background:
+
+        radial-gradient(
+            circle at 8% 10%,
+            rgba(255, 212, 71, .55),
+            transparent 23%
+        ),
+
+        radial-gradient(
+            circle at 92% 20%,
+            rgba(217, 35, 50, .18),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fff8f2 0%,
+            #ffffff 32%,
+            #fff9dc 62%,
+            #f4fff7 100%
+        );
+
+}
+
+
+button,
+a {
+
+    font: inherit;
+
+}
+
+
+button {
+
+    cursor: pointer;
+
+}
+
+
+.app {
+
+    width:
+        min(100%, 1100px);
+
+    margin: auto;
+
+    min-height: 100vh;
+
+    padding-bottom: 110px;
+
+    overflow: hidden;
+
+    position: relative;
+
+}
+
+
+/* =====================================
+   DECORACIONES FLOTANTES
+===================================== */
+
+.decoracion {
+
+    position: absolute;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    user-select: none;
+
+}
+
+
+.decoracion-1 {
+
+    top: 150px;
+    left: 2%;
+
+    color: var(--rojo);
+
+    font-size: 45px;
+
+    animation:
+        flotar 4s ease-in-out infinite;
+
+}
+
+
+.decoracion-2 {
+
+    top: 300px;
+    right: 3%;
+
+    color: var(--verde);
+
+    font-size: 50px;
+
+    animation:
+        flotar 5s ease-in-out infinite reverse;
+
+}
+
+
+.decoracion-3 {
+
+    top: 580px;
+    left: 2%;
+
+    font-size: 42px;
+
+    transform: rotate(-12deg);
+
+    animation:
+        girarSuave 6s ease-in-out infinite;
+
+}
+
+
+.decoracion-4 {
+
+    top: 850px;
+    right: 2%;
+
+    font-size: 45px;
+
+    animation:
+        flotar 4.5s ease-in-out infinite;
+
+}
+
+
+.decoracion-5 {
+
+    top: 1300px;
+    left: 1%;
+
+    font-size: 40px;
+
+    animation:
+        flotar 5s ease-in-out infinite reverse;
+
+}
+
+
+/* =====================================
+   PAPEL PICADO
+===================================== */
+
+.papel-picado {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 34px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    overflow: hidden;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--rojo),
+            var(--amarillo),
+            var(--verde),
+            var(--rojo),
+            var(--amarillo),
+            var(--verde)
+        );
+
+    padding-top: 4px;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.08);
+
+}
+
+
+.papel-picado span {
+
+    font-size: 18px;
+
+    line-height: 1;
+
+    filter:
+        drop-shadow(
+            0 2px 2px rgba(0,0,0,.1)
+        );
+
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+.loteria-header {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding:
+        55px 25px 38px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    border-bottom-left-radius: 55px;
+
+    border-bottom-right-radius: 55px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(217,35,50,.14),
+            rgba(255,212,71,.20),
+            rgba(8,116,67,.12)
+        );
+
+    box-shadow:
+        inset 0 -1px 0 rgba(255,255,255,.8);
+
+}
+
+
+/* maicitos del encabezado */
+
+.loteria-header::before {
+
+    content: "🌽";
+
+    position: absolute;
+
+    left: 7%;
+
+    bottom: 25px;
+
+    font-size: 42px;
+
+    transform: rotate(-12deg);
+
+    animation:
+        flotar 4s ease-in-out infinite;
+
+}
+
+
+.loteria-header::after {
+
+    content: "🌽";
+
+    position: absolute;
+
+    right: 7%;
+
+    bottom: 25px;
+
+    font-size: 42px;
+
+    transform: rotate(12deg);
+
+    animation:
+        flotar 4s ease-in-out infinite reverse;
+
+}
+
+
+/* =====================================
+   BOTÓN VOLVER
+===================================== */
+
+.volver {
+
+    position: absolute;
+
+    top: 52px;
+    left: 25px;
+
+    color: var(--rojo);
+
+    text-decoration: none;
+
+    font-weight: 800;
+
+    background:
+        rgba(255,255,255,.95);
+
+    padding:
+        10px 16px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.08);
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+
+}
+
+
+.volver:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        var(--blanco);
+
+}
+
+
+/* =====================================
+   SONIDO
+===================================== */
+
+.boton-sonido {
+
+    position: absolute;
+
+    top: 52px;
+    right: 25px;
+
+    width: 46px;
+    height: 46px;
+
+    border:
+        3px solid var(--amarillo);
+
+    border-radius: 50%;
+
+    background: white;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.09);
+
+    transition:
+        transform .2s ease;
+
+}
+
+
+.boton-sonido:hover {
+
+    transform:
+        scale(1.08)
+        rotate(8deg);
+
+}
+
+
+/* =====================================
+   ETIQUETA
+===================================== */
+
+.etiqueta-juego {
+
+    display: inline-block;
+
+    margin-top: 45px;
+
+    padding:
+        9px 17px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--rojo),
+            var(--rojo-claro)
+        );
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.2px;
+
+    box-shadow:
+        0 8px 18px rgba(217,35,50,.20);
+
+    animation:
+        entradaArriba .7s ease;
+
+}
+
+
+/* =====================================
+   TÍTULO
+===================================== */
+
+.loteria-header h1 {
+
+    margin-top: 17px;
+
+    font-family:
+        "Baloo 2",
+        "Fredoka",
+        sans-serif;
+
+    font-size:
+        clamp(48px, 9vw, 88px);
+
+    line-height: .9;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--rojo),
+            #efb900,
+            var(--verde)
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    text-shadow:
+        0 5px 0 rgba(255,255,255,.7);
+
+    animation:
+        entradaArriba .8s ease;
+
+}
+
+
+.frase {
+
+    margin-top: 20px;
+
+    color: #59635e;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    font-weight: 600;
+
+}
+
+
+.decoracion-titulo {
+
+    margin-top: 16px;
+
+    font-size: 22px;
+
+    letter-spacing: 8px;
+
+    animation:
+        aparecer .8s ease;
+
+}
+
+
+/* =====================================
+   ZONA PRINCIPAL
+===================================== */
+
+.zona-juego {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        calc(100% - 40px);
+
+    max-width: 1060px;
+
+    margin:
+        28px auto 22px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(300px, .82fr)
+        minmax(500px, 1.38fr);
+
+    gap: 25px;
+
+    align-items: stretch;
+
+}
+
+
+/* =====================================
+   PANELES
+===================================== */
+
+.panel-juego,
+.panel-tablero {
+
+    position: relative;
+
+    background:
+        rgba(255,255,255,.95);
+
+    border-radius: 32px;
+
+    box-shadow:
+        var(--sombra-fuerte);
+
+    border:
+        3px solid rgba(255,212,71,.45);
+
+    backdrop-filter:
+        blur(8px);
+
+}
+
+
+/* =====================================
+   PANEL IZQUIERDO
+===================================== */
+
+.panel-juego {
+
+    padding:
+        25px 22px 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+}
+
+
+.panel-juego::before {
+
+    content: "🌽";
+
+    position: absolute;
+
+    top: 14px;
+
+    left: 14px;
+
+    font-size: 28px;
+
+    transform: rotate(-18deg);
+
+    animation:
+        flotar 4s ease-in-out infinite;
+
+}
+
+
+.panel-juego::after {
+
+    content: "🌽";
+
+    position: absolute;
+
+    bottom: 14px;
+
+    right: 14px;
+
+    font-size: 28px;
+
+    transform: rotate(18deg);
+
+    animation:
+        flotar 4.5s ease-in-out infinite reverse;
+
+}
+
+
+/* =====================================
+   ETIQUETA CARTA
+===================================== */
+
+.etiqueta-panel {
+
+    color: var(--verde);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.2px;
+
+    margin-bottom: 11px;
+
+}
+
+
+/* =====================================
+   CARTA DESTACADA
+===================================== */
+
+.carta-destacada {
+
+    position: relative;
+
+    width: fit-content;
+
+    padding: 12px;
+
+    border-radius: 27px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fff8dc
+        );
+
+    border:
+        4px solid var(--amarillo);
+
+    box-shadow:
+        0 18px 40px rgba(70,20,20,.18);
+
+}
+
+
+.carta-marco {
+
+    width: 195px;
+
+    margin: auto;
+
+    padding: 8px;
+
+    background: white;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 14px 28px rgba(0,0,0,.14);
+
+    transform:
+        rotate(-2deg);
+
+    transition:
+        transform .3s ease;
+
+}
+
+
+.carta-marco:hover {
+
+    transform:
+        rotate(2deg)
+        scale(1.03);
+
+}
+
+
+.carta-marco.nueva {
+
+    animation:
+        aparecerCarta .55s ease;
+
+}
+
+
+/* =====================================
+   IMAGEN CARTA
+===================================== */
+
+.carta-imagen {
+
+    width: 100%;
+
+    aspect-ratio: 3 / 4;
+
+    display: grid;
+
+    place-items: center;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff4c2,
+            #ffffff
+        );
+
+    border:
+        5px solid var(--rojo);
+
+    font-size: 65px;
+
+    font-weight: 900;
+
+}
+
+
+.carta-imagen img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+.carta-nombre {
+
+    padding:
+        9px 5px 4px;
+
+    color: var(--rojo);
+
+    font-family:
+        "Baloo 2",
+        "Fredoka",
+        sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+}
+
+
+.carta-brillitos {
+
+    margin-top: 6px;
+
+    font-size: 17px;
+
+    letter-spacing: 4px;
+
+}
+
+
+/* =====================================
+   MENSAJE
+===================================== */
+
+.mensaje-carta {
+
+    min-height: 25px;
+
+    margin:
+        15px 0 12px;
+
+    color: var(--gris);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+
+}
+
+
+/* =====================================
+   BOTONES CARTA
+===================================== */
+
+.botones-carta {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    width: 100%;
+
+    margin-bottom: 13px;
+
+}
+
+
+.boton-sacar,
+.boton-cantar {
+
+    border: 0;
+
+    padding:
+        12px 17px;
+
+    border-radius: 35px;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.boton-sacar {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--rojo),
+            var(--rojo-claro)
+        );
+
+    box-shadow:
+        0 10px 20px rgba(217,35,50,.22);
+
+}
+
+
+.boton-cantar {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--verde),
+            var(--verde-claro)
+        );
+
+    box-shadow:
+        0 10px 20px rgba(8,116,67,.20);
+
+}
+
+
+.boton-sacar:hover,
+.boton-cantar:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1.02);
+
+}
+
+
+.boton-sacar:disabled {
+
+    opacity: .55;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+
+/* =====================================
+   BOTONES PARTIDA
+===================================== */
+
+.panel-juego
+.boton-principal,
+.panel-juego
+.boton-secundario {
+
+    width:
+        min(100%, 300px);
+
+    border: 0;
+
+    padding:
+        13px 20px;
+
+    border-radius: 30px;
+
+    font-weight: 900;
+
+    transition:
+        transform .2s ease;
+
+}
+
+
+.panel-juego
+.boton-principal {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--verde),
+            var(--verde-claro)
+        );
+
+    color: white;
+
+    box-shadow:
+        0 10px 20px rgba(8,116,67,.22);
+
+    margin-bottom: 8px;
+
+}
+
+
+.panel-juego
+.boton-secundario {
+
+    background: white;
+
+    color: var(--rojo);
+
+    border:
+        2px solid #f0d6d6;
+
+}
+
+
+.panel-juego
+.boton-principal:hover,
+.panel-juego
+.boton-secundario:hover {
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* =====================================
+   TABLERO
+===================================== */
+
+.panel-tablero {
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.97),
+            rgba(255,250,230,.96)
+        );
+
+}
+
+
+.tablero-cabecera {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 17px;
+
+}
+
+
+.tablero-cabecera small {
+
+    color: var(--rojo);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+}
+
+
+.tablero-cabecera h2 {
+
+    margin-top: 3px;
+
+    font-family:
+        "Baloo 2",
+        "Fredoka",
+        sans-serif;
+
+    font-size: 29px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+}
+
+
+.progreso-tablero {
+
+    padding:
+        9px 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--amarillo),
+            #ffe98b
+        );
+
+    color: #604b00;
+
+    border-radius: 25px;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 6px 15px rgba(255,212,71,.25);
+
+}
+
+
+/* =====================================
+   TABLERO VERDE
+===================================== */
+
+.tablero {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 9px;
+
+    padding: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b91e2c 0%,
+            #e2353e 28%,
+            #ffd447 50%,
+            #20a866 72%,
+            #087443 100%
+        );
+
+    border-radius: 28px;
+
+    box-shadow:
+        var(--sombra-fuerte);
+
+    border:
+        5px solid white;
+
+    position: relative;
+
+}
+
+
+.tablero::before {
+
+    content: "🌽";
+
+    position: absolute;
+
+    top: -20px;
+
+    left: -17px;
+
+    font-size: 32px;
+
+    transform: rotate(-20deg);
+
+}
+
+
+.tablero::after {
+
+    content: "🌽";
+
+    position: absolute;
+
+    bottom: -18px;
+
+    right: -15px;
+
+    font-size: 32px;
+
+    transform: rotate(20deg);
+
+}
+
+
+/* =====================================
+   CARTAS DEL TABLERO
+===================================== */
+
+.carta-tablero {
+
+    position: relative;
+
+    aspect-ratio: 3 / 4;
+
+    border:
+        3px solid white;
+
+    border-radius: 11px;
+
+    background: white;
+
+    overflow: hidden;
+
+    padding: 0;
+
+    transition:
+        transform .2s ease,
+        opacity .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.carta-tablero:hover {
+
+    transform:
+        translateY(-4px)
+        rotate(1deg);
+
+    box-shadow:
+        0 9px 18px rgba(0,0,0,.18);
+
+}
+
+
+.carta-tablero .carta-mini {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: grid;
+
+    place-items: center;
+
+    overflow: hidden;
+
+    font-size:
+        clamp(22px, 3vw, 38px);
+
+}
+
+
+.carta-tablero .carta-mini img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+.carta-tablero .nombre-mini {
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    padding:
+        5px 2px;
+
+    background:
+        rgba(255,255,255,.94);
+
+    color: var(--texto);
+
+    font-size:
+        clamp(7px, 1vw, 11px);
+
+    font-weight: 900;
+
+    text-align: center;
+
+}
+
+
+/* =====================================
+   CARTA MARCADA
+===================================== */
+
+.carta-tablero.marcada {
+
+    border-color:
+        var(--amarillo);
+
+    transform:
+        scale(.94)
+        rotate(-1deg);
+
+    box-shadow:
+        0 0 0 4px var(--amarillo),
+        0 8px 20px rgba(0,0,0,.2);
+
+}
+
+
+.carta-tablero.marcada::after {
+
+    content: "✓";
+
+    position: absolute;
+
+    top: 5px;
+
+    right: 5px;
+
+    width: 27px;
+
+    height: 27px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        var(--verde);
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 1000;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.2);
+
+}
+
+
+.carta-tablero.no-disponible {
+
+    opacity: .45;
+
+}
+
+
+/* =====================================
+   INSTRUCCIÓN TABLERO
+===================================== */
+
+.instruccion-tablero {
+
+    margin-top: 12px;
+
+    color: var(--gris);
+
+    text-align: center;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+    font-weight: 600;
+
+}
+
+
+/* =====================================
+   MARCADOR
+===================================== */
+
+.marcador {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        calc(100% - 40px);
+
+    max-width: 1060px;
+
+    margin:
+        0 auto 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+        var(--sombra);
+
+    overflow: hidden;
+
+    border:
+        3px solid rgba(255,212,71,.45);
+
+}
+
+
+.marcador-item {
+
+    text-align: center;
+
+    padding:
+        14px 10px;
+
+    border-right:
+        1px solid #edf0ed;
+
+}
+
+
+.marcador-item:last-child {
+
+    border-right: 0;
+
+}
+
+
+.marcador-icono {
+
+    display: block;
+
+    font-size: 22px;
+
+    margin-bottom: 2px;
+
+}
+
+
+.marcador-item small {
+
+    display: block;
+
+    color: var(--gris);
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+}
+
+
+.marcador-item strong {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--verde);
+
+    font-size: 24px;
+
+}
+
+
+.marcador-item.principal strong {
+
+    color: var(--rojo);
+
+}
+
+
+/* =====================================
+   RESULTADO
+===================================== */
+
+.resultado-card {
+
+    display: none;
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        calc(100% - 40px);
+
+    max-width: 1060px;
+
+    margin:
+        0 auto 25px;
+
+    padding: 22px;
+
+    align-items: center;
+
+    gap: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8d8,
+            #ffffff
+        );
+
+    border-radius: 25px;
+
+    box-shadow:
+        var(--sombra);
+
+    border:
+        3px solid var(--amarillo);
+
+}
+
+
+.resultado-card.mostrar {
+
+    display: flex;
+
+    animation:
+        aparecerCarta .45s ease;
+
+}
+
+
+.resultado-icono {
+
+    font-size: 42px;
+
+}
+
+
+.resultado-card span {
+
+    color: var(--rojo);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+}
+
+
+.resultado-card h2 {
+
+    margin:
+        5px 0;
+
+    font-family:
+        "Baloo 2",
+        "Fredoka",
+        sans-serif;
+
+    font-size: 26px;
+
+}
+
+
+.resultado-card p {
+
+    color: var(--gris);
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================
+   NAVEGACIÓN
+===================================== */
+
+.menu-inferior {
+
+    position: fixed;
+
+    z-index: 100;
+
+    bottom: 15px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        min(
+            calc(100% - 30px),
+            600px
+        );
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    padding: 8px;
+
+    background:
+        rgba(255,255,255,.95);
+
+    backdrop-filter:
+        blur(15px);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.15);
+
+    border:
+        2px solid rgba(255,212,71,.35);
+
+}
+
+
+.menu-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 3px;
+
+    padding: 8px;
+
+    color: var(--gris);
+
+    text-decoration: none;
+
+    border-radius: 18px;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+
+}
+
+
+.menu-item:hover {
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.menu-item span {
+
+    font-size: 20px;
+
+}
+
+
+.menu-item small {
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+}
+
+
+.menu-item.activo {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0aa,
+            #fff9dc
+        );
+
+    color: var(--rojo);
+
+}
+
+
+/* =====================================
+   ANIMACIONES
+===================================== */
+
+@keyframes aparecerCarta {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(.65)
+            rotate(-12deg);
+
+    }
+
+    60% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.08)
+            rotate(4deg);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(-2deg);
+
+    }
+
+}
+
+
+@keyframes entradaArriba {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+@keyframes flotar {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-4deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-10px)
+            rotate(5deg);
+
+    }
+
+}
+
+
+@keyframes girarSuave {
+
+    0%,
+    100% {
+
+        transform:
+            rotate(-12deg)
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            rotate(12deg)
+            translateY(-8px);
+
+    }
+
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 900px) {
+
+    .zona-juego {
+
+        grid-template-columns:
+            1fr;
+
+        max-width: 650px;
+
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .loteria-header {
+
+        padding:
+            55px 15px 42px;
+
+    }
+
+
+    .volver {
+
+        left: 15px;
+
+    }
+
+
+    .boton-sonido {
+
+        right: 15px;
+
+    }
+
+
+    .loteria-header::before {
+
+        left: 3%;
+
+        font-size: 32px;
+
+    }
+
+
+    .loteria-header::after {
+
+        right: 3%;
+
+        font-size: 32px;
+
+    }
+
+
+    .zona-juego {
+
+        width:
+            calc(100% - 20px);
+
+        margin-top: 20px;
+
+        gap: 16px;
+
+    }
+
+
+    .panel-juego,
+    .panel-tablero {
+
+        border-radius: 25px;
+
+    }
+
+
+    .panel-juego {
+
+        padding:
+            22px 14px 24px;
+
+    }
+
+
+    .carta-marco {
+
+        width: 165px;
+
+    }
+
+
+    .botones-carta {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 7px;
+
+    }
+
+
+    .boton-sacar,
+    .boton-cantar {
+
+        width:
+            min(100%, 260px);
+
+    }
+
+
+    .panel-juego
+    .boton-principal,
+    .panel-juego
+    .boton-secundario {
+
+        width:
+            min(100%, 260px);
+
+    }
+
+
+    .panel-tablero {
+
+        padding:
+            18px 12px;
+
+    }
+
+
+    .tablero-cabecera {
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .tablero-cabecera h2 {
+
+        font-size: 23px;
+
+    }
+
+
+    .progreso-tablero {
+
+        font-size: 11px;
+
+        padding:
+            7px 9px;
+
+    }
+
+
+    .tablero {
+
+        gap: 5px;
+
+        padding: 9px;
+
+        border-width: 4px;
+
+        border-radius: 22px;
+
+    }
+
+
+    .carta-tablero {
+
+        border-width: 2px;
+
+        border-radius: 8px;
+
+    }
+
+
+    .carta-tablero .nombre-mini {
+
+        font-size: 6px;
+
+        padding: 3px 1px;
+
+    }
+
+
+    .instruccion-tablero {
+
+        font-size: 12px;
+
+    }
+
+
+    .marcador {
+
+        width:
+            calc(100% - 20px);
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .marcador-item {
+
+        padding:
+            12px 4px;
+
+    }
+
+
+    .marcador-item strong {
+
+        font-size: 21px;
+
+    }
+
+
+    .marcador-item small {
+
+        font-size: 8px;
+
+    }
+
+
+    .resultado-card {
+
+        width:
+            calc(100% - 20px);
+
+    }
+
+}
+
+
+@media (max-width: 360px) {
+
+    .loteria-header h1 {
+
+        font-size: 47px;
+
+    }
+
+
+    .tablero {
+
+        gap: 4px;
+
+        padding: 7px;
+
+    }
+
+
+    .carta-tablero .nombre-mini {
+
+        font-size: 5px;
+
+    }
+
+}
+
+
+/* =====================================
+   REDUCIR ANIMACIONES
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+
+    }
+
+}

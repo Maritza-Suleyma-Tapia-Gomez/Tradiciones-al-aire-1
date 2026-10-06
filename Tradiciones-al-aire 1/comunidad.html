@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Comunidad | Tradiciones al Aire</title>
+
+    <link rel="stylesheet" href="estilos/comunidad.css">
+</head>
+
+<body>
+
+    <header class="comunidad-header">
+
+        <a href="index.html" class="volver">
+            ← Inicio
+        </a>
+
+        <div class="titulo">
+            <span>🇲🇽</span>
+            <div>
+                <p>TRADICIONES AL AIRE</p>
+                <h1>Comunidad</h1>
+            </div>
+        </div>
+
+        <div class="decoracion">🎊 🪅 🎈</div>
+
+    </header>
+
+
+    <main class="contenedor">
+
+        <section class="bienvenida">
+
+            <div class="bienvenida-icono">
+                🧑🏻‍🎮
+            </div>
+
+            <div>
+                <h2>¡Qué gusto verte! 👋</h2>
+
+                <p>
+                    Comparte tus experiencias, comenta y juega
+                    con otros amantes de las tradiciones mexicanas.
+                </p>
+            </div>
+
+        </section>
+
+
+        <section class="crear-publicacion">
+
+            <div class="encabezado-seccion">
+                <span>✍️</span>
+                <h2>Comparte algo</h2>
+            </div>
+
+            <div class="selector-categoria">
+
+                <button
+                    type="button"
+                    class="categoria activo"
+                    data-categoria="Tradiciones">
+                    🇲🇽 Tradiciones
+                </button>
+
+                <button
+                    type="button"
+                    class="categoria"
+                    data-categoria="Juegos">
+                    🎮 Juegos
+                </button>
+
+                <button
+                    type="button"
+                    class="categoria"
+                    data-categoria="Retos">
+                    🏆 Retos
+                </button>
+
+            </div>
+
+            <textarea
+                id="texto-publicacion"
+                maxlength="280"
+                placeholder="¿Qué quieres compartir con la comunidad? 💬"></textarea>
+
+            <div class="publicar-abajo">
+
+                <span id="contador">0 / 280</span>
+
+                <button
+                    type="button"
+                    id="boton-publicar">
+                    🚀 Publicar
+                </button>
+
+            </div>
+
+        </section>
+<section class="zona-partidas">
+
+    <div class="encabezado-seccion">
+        <span>🎮</span>
+        <div>
+            <h2>Juega con tus amigos</h2>
+            <p>Crea una partida e invita a otros jugadores 🇲🇽</p>
+        </div>
+    </div>
+
+    <div class="partida-formulario">
+
+        <label for="juego-partida">
+            🎯 Elige un juego
+        </label>
+
+        <select id="juego-partida">
+            <option value="Lotería">🃏 Lotería</option>
+            <option value="Trompo">🌀 Trompo</option>
+            <option value="Balero">🎯 Balero</option>
+            <option value="Matatena">🔵 Matatena</option>
+            <option value="Avioncito">✈️ Avioncito</option>
+            <option value="Cuerda">🪢 Saltar la cuerda</option>
+        </select>
+
+
+        <label for="max-jugadores">
+            👥 Máximo de jugadores
+        </label>
+
+        <select id="max-jugadores">
+            <option value="2">2 jugadores</option>
+            <option value="3">3 jugadores</option>
+            <option value="4" selected>4 jugadores</option>
+            <option value="5">5 jugadores</option>
+            <option value="6">6 jugadores</option>
+            <option value="8">8 jugadores</option>
+            <option value="10">10 jugadores</option>
+        </select>
+
+
+        <button
+            type="button"
+            id="boton-crear-partida"
+            class="boton-crear-partida">
+
+            🎮 Crear partida
+
+        </button>
+
+    </div>
+
+
+    <div
+        id="partida-creada"
+        class="partida-creada oculto">
+
+        <div class="partida-icono">
+            🎉
+        </div>
+
+        <h3>
+            ¡Partida creada!
+        </h3>
+
+        <p>
+            Comparte este código con tus amigos:
+        </p>
+
+        <div class="codigo-partida">
+            <span id="codigo-partida">
+                ------
+            </span>
+
+            <button
+                type="button"
+                id="boton-copiar-codigo"
+                title="Copiar código">
+
+                📋
+
+            </button>
+        </div>
+
+
+        <div class="datos-partida">
+
+            <div>
+                🎮
+                <strong id="nombre-juego-partida">
+                    Lotería
+                </strong>
+            </div>
+
+            <div>
+                👥
+                <strong id="jugadores-partida">
+                    1/4
+                </strong>
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="boton-ver-partida"
+            class="boton-ver-partida">
+
+            👀 Ver partida
+
+        </button>
+
+    </div>
+
+
+    <div class="unirse-partida">
+
+        <div class="encabezado-unirse">
+            <span>🔗</span>
+            <div>
+                <h3>¿Te invitaron a jugar?</h3>
+                <p>Escribe el código de la partida.</p>
+            </div>
+        </div>
+
+
+        <div class="unirse-contenido">
+
+            <input
+                type="text"
+                id="codigo-unirse"
+                maxlength="8"
+                placeholder="Ej. A7K92F3B"
+                autocomplete="off"
+            >
+
+            <button
+                type="button"
+                id="boton-unirse">
+
+                🚀 Unirme
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <section class="zona-comunidad">
+
+            <div class="titulo-publicaciones">
+                <div>
+                    <span>💬</span>
+                    <h2>Publicaciones</h2>
+                </div>
+
+                <span class="en-vivo">
+                    🟢 Comunidad activa
+                </span>
+            </div>
+
+            <div id="lista-publicaciones">
+
+                <div class="cargando">
+                    <div>🇲🇽</div>
+                    <p>Cargando publicaciones...</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <nav class="navegacion">
+
+    <a href="index.html">
+        <span>🏠</span>
+        <small>Inicio</small>
+    </a>
+
+    <a href="index.html#juegos">
+        <span>🎮</span>
+        <small>Juegos</small>
+    </a>
+
+    <a href="comunidad.html" class="activo">
+        <span>👥</span>
+        <small>Comunidad</small>
+    </a>
+
+    <a href="retos.html">
+        <span>🏆</span>
+        <small>Retos</small>
+    </a>
+
+    <a href="perfil.html">
+        <span>👤</span>
+        <small>Perfil</small>
+    </a>
+
+</nav>
+
+
+    <script src="Java Script/comunidad.js"></script>
+
+</body>
+</html>

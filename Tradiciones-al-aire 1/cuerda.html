@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saltar la cuerda | Tradiciones al Aire</title>
+    <link rel="stylesheet" href="estilos/cuerda.css">
+</head>
+
+<body>
+
+    <header class="encabezado">
+
+        <div class="barra-superior">
+            <a href="./index.html" class="boton-inicio">
+                ← Inicio
+            </a>
+
+            <div class="fila-titulo">
+                <h1>🎀 Saltar la cuerda 🎀</h1>
+                <button id="botonSonido" class="boton-sonido" type="button">
+                    🔊
+                </button>
+            </div>
+        </div>
+
+        <p class="etiqueta">JUEGO TRADICIONAL</p>
+        <p class="frase">¡Salta al ritmo y demuestra tus habilidades!</p>
+    </header>
+
+    <main>
+        <section class="juego">
+
+            <div class="escena" id="escena">
+
+                <!-- DECORACIONES -->
+                <div class="sol">☀️</div>
+                <div class="nube nube-1">☁️</div>
+                <div class="nube nube-2">☁️</div>
+
+                <div class="papel-picado papel-1">🔺🔻🔺</div>
+                <div class="papel-picado papel-2">🔻🔺🔻</div>
+
+                <!-- PERSONA IZQUIERDA -->
+                <div class="persona persona-izquierda">
+                    <div class="cabello"></div>
+                    <div class="cabeza"></div>
+                    <div class="cuerpo"></div>
+                    <div class="brazo brazo-izquierdo"></div>
+                    <div class="brazo brazo-derecho"></div>
+                    <div class="pierna pierna-izquierda"></div>
+                    <div class="pierna pierna-derecha"></div>
+                    <div class="mano mano-izquierda"></div>
+                </div>
+
+                <!-- NIÑA QUE SALTA -->
+                <div class="saltadora" id="saltadora">
+                    <div class="cabello-saltadora"></div>
+
+                    <div class="cabeza-saltadora">
+                        <span class="ojo ojo-izquierdo"></span>
+                        <span class="ojo ojo-derecho"></span>
+                        <span class="sonrisa"></span>
+                    </div>
+
+                    <div class="vestido"></div>
+
+                    <div class="brazo-saltadora brazo-saltadora-izquierdo"></div>
+                    <div class="brazo-saltadora brazo-saltadora-derecho"></div>
+
+                    <div class="pierna-saltadora pierna-saltadora-izquierda"></div>
+                    <div class="pierna-saltadora pierna-saltadora-derecha"></div>
+                </div>
+
+                <!-- PERSONA DERECHA -->
+                <div class="persona persona-derecha">
+                    <div class="cabello"></div>
+                    <div class="cabeza"></div>
+                    <div class="cuerpo"></div>
+                    <div class="brazo brazo-izquierdo"></div>
+                    <div class="brazo brazo-derecho"></div>
+                    <div class="pierna pierna-izquierda"></div>
+                    <div class="pierna pierna-derecha"></div>
+                    <div class="mano mano-derecha"></div>
+                </div>
+
+                <!-- CUERDA -->
+                <div class="cuerda" id="cuerda">
+                    <svg viewBox="0 0 800 300"
+                         preserveAspectRatio="none"
+                         aria-hidden="true">
+
+                        <path id="cuerdaCamino"
+                              d="M 10 175 C 180 175, 260 275, 400 275 C 540 275, 620 175, 790 175">
+                        </path>
+
+                    </svg>
+                </div>
+
+                <div class="suelo"></div>
+            </div>
+
+            <div class="informacion-nivel">
+                <span id="nivelTexto">⭐ Nivel 1</span>
+                <span id="velocidadTexto">🐢 Lento</span>
+            </div>
+
+            <p id="mensajeJuego" class="mensaje">
+                Presiona comenzar para jugar
+            </p>
+
+            <button id="botonLanzar" class="boton-jugar" type="button">
+                🎮 COMENZAR
+            </button>
+
+            <div class="marcador">
+
+                <div class="marcador-caja">
+                    <span>⭐</span>
+                    <strong id="aciertos">0</strong>
+                    <small>Saltos</small>
+                </div>
+
+                <div class="marcador-caja">
+                    <span>🏆</span>
+                    <strong id="record">0</strong>
+                    <small>Récord</small>
+                </div>
+
+                <div class="marcador-caja">
+                    <span>🔥</span>
+                    <strong id="racha">0</strong>
+                    <small>Racha</small>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+    <script src="Java Script/cuerda.js"></script>
+</body>
+</html>

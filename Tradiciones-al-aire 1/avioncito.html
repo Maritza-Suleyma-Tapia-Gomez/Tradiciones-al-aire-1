@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Avioncito | Tradiciones al Aire</title>
+
+    <link rel="stylesheet" href="estilos/balero.css">
+    <link rel="stylesheet" href="estilos/avioncito.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- DECORACIÓN -->
+    <div class="decoracion decoracion-1">✦</div>
+    <div class="decoracion decoracion-2">✧</div>
+    <div class="decoracion decoracion-3">◉</div>
+
+
+    <!-- ENCABEZADO -->
+    <header class="balero-header">
+
+        <a href="index.html" class="volver">
+            ← Inicio
+        </a>
+
+        <button class="boton-sonido" id="botonSonido" aria-label="Activar o desactivar sonido">
+            🔊
+        </button>
+
+        <div class="etiqueta-juego">
+            ✈️ JUEGO TRADICIONAL
+        </div>
+
+        <h1>El Avioncito</h1>
+
+        <p class="frase">
+            Lanza la piedrita,<br>
+            ¡y salta casilla por casilla!
+        </p>
+
+    </header>
+
+
+    <!-- AVIONCITO PROTAGONISTA -->
+    <section class="balero-hero">
+
+        <div class="brillo"></div>
+
+        <div class="avion-escena">
+            <div class="avion-tablero" id="avionTablero"></div>
+        </div>
+
+        <p class="mensaje-juego" id="mensajeJuego">
+            Lanza la piedrita y salta en orden, sin pisar su casilla
+        </p>
+
+        <button class="boton-lanzar" id="botonLanzar">
+            <span>✈️</span> ¡Lanzar piedrita!
+        </button>
+
+    </section>
+
+
+    <!-- MARCADOR -->
+    <section class="marcador">
+
+        <div class="marcador-item">
+            <span class="marcador-icono">🎯</span>
+            <small>ACIERTOS</small>
+            <strong id="aciertos">0</strong>
+        </div>
+
+        <div class="marcador-item principal">
+            <span class="marcador-icono">🏆</span>
+            <small>RÉCORD</small>
+            <strong id="record">0</strong>
+        </div>
+
+        <div class="marcador-item">
+            <span class="marcador-icono">🔥</span>
+            <small>RACHA</small>
+            <strong id="racha">0</strong>
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="Java Script/avioncito.js"></script>
+
+</body>
+</html>

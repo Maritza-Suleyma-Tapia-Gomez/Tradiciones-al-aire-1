@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retos | Tradiciones al Aire</title>
+    <!-- Usa tu CSS de comunidad para mantener el diseño idéntico -->
+    <link rel="stylesheet" href="estilos/comunidad.css">
+</head>
+<body>
+
+    <header class="comunidad-header">
+        <a href="index.html" class="volver">← Inicio</a>
+        <div class="titulo">
+            <span>🏆</span>
+            <div>
+                <p>TRADICIONES AL AIRE</p>
+                <h1>Retos Culturales</h1>
+            </div>
+        </div>
+        <div class="decoracion">🎊 🪅 🎈</div>
+    </header>
+
+    <main class="contenedor">
+
+        <!-- Bienvenida -->
+        <section class="bienvenida">
+            <div class="bienvenida-icono">🏆</div>
+            <div>
+                <h2>¡Supera los Desafíos! 🎯</h2>
+                <p>Demuestra tus conocimientos en las tradiciones mexicanas, completa los retos y acumula puntos.</p>
+            </div>
+        </section>
+
+        <!-- Formulario para Crear Reto (Usa los IDs exactos de retos.js) -->
+        <section class="crear-publicacion">
+            <div class="encabezado-seccion">
+                <span>➕</span>
+                <h2>Crear un Nuevo Reto</h2>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <input 
+                    type="text" 
+                    id="nombre-reto" 
+                    placeholder="Nombre del reto (Ej. Maestro del Trompo)" 
+                    style="width: 100%; padding: 12px; border: 2px solid #eadfd7; border-radius: 15px; outline: none;"
+                >
+
+                <textarea 
+                    id="descripcion-reto" 
+                    placeholder="Descripción del reto..." 
+                    style="width: 100%; min-height: 80px; padding: 12px; border: 2px solid #eadfd7; border-radius: 15px; outline: none; resize: vertical;"
+                ></textarea>
+
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <label for="meta-reto" style="font-weight: bold; color: #614a42;">Meta (Puntos/Repeticiones):</label>
+                    <input 
+                        type="number" 
+                        id="meta-reto" 
+                        value="5" 
+                        min="1" 
+                        style="width: 80px; padding: 8px; border: 2px solid #eadfd7; border-radius: 10px; text-align: center;"
+                    >
+                </div>
+
+                <div class="publicar-abajo">
+                    <div></div>
+                    <button type="button" id="boton-crear-reto">
+                        🏆 Crear reto
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lista de Retos (Donde retos.js cargará los retos de la BD) -->
+        <section class="zona-comunidad">
+            <div class="titulo-publicaciones">
+                <div>
+                    <span>🎯</span>
+                    <h2>Retos Disponibles</h2>
+                </div>
+            </div>
+
+            <div id="lista-retos">
+                <div class="cargando">
+                    <div>🇲🇽</div>
+                    <p>Cargando retos disponibles...</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Menú de Navegación Inferior -->
+    <nav class="navegacion">
+        <a href="index.html">
+            <span>🏠</span>
+            <small>Inicio</small>
+        </a>
+        <a href="index.html#juegos">
+            <span>🎮</span>
+            <small>Juegos</small>
+        </a>
+        <a href="comunidad.html">
+            <span>👥</span>
+            <small>Comunidad</small>
+        </a>
+        <a href="retos.html" class="activo">
+            <span>🏆</span>
+            <small>Retos</small>
+        </a>
+        <a href="perfil.html">
+            <span>👤</span>
+            <small>Perfil</small>
+        </a>
+    </nav>
+
+    <!-- Conexión con tu JavaScript de Retos -->
+    <script src="Java Script/retos.js"></script>
+</body>
+</html>
